@@ -1,7 +1,14 @@
 SHELL=/bin/bash
 
-SRC=index.md
-DST=$(shell basename ${SRC} .md).html
+RM=/bin/rm
+PANDOC=/usr/bin/pandoc
+
+NAME=index
+SRC=${NAME}.md
+DST=${NAME}.html
 
 convert:	${SRC}
-	pandoc -f Markdown -t html5 -i ${SRC} -o ${DST}
+	${PANDOC} -f Markdown -t html5 -i ${SRC} -o ${DST}
+
+clean:	${DST}
+	if [ -e ${DST} ] ; then ${RM} -v ${DST} ; fi ;
