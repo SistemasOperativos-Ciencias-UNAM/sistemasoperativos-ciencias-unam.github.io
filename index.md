@@ -17,7 +17,8 @@ Semestre 2018-1
 + Conocimientos de programación en un lenguaje estructurado u orientado a objetos
 + No tener materias encimadas en el horario de Sistemas Operativos
 + Asistencia regular a clase
-    - La asistencia a las sesiones de laboratorio es obligatoria
++ La asistencia a las sesiones de laboratorio es obligatoria
+
 
 ### Objetivos
 
@@ -38,9 +39,14 @@ Semestre 2018-1
 
 ### Impartición de las clases
 
-+ Lunes y miércoles de 20:00 a 21:00 horas
-+ Martes y jueves de 18:30 a 20 horas
-+ Laboratorio: los días miércoles de 14:00 a 16:00 horas
+#### Teoría
+
++ Lunes y miércoles de 20:00 a 21:00 h
++ Martes y jueves de 18:30 a 20 h
+
+#### Laboratorio
+
++ Miércoles de 14:00 a 16:00 h
 
 ### Contenido del curso
 
@@ -190,8 +196,8 @@ La calificación final se calculará en base a los siguientes porcentajes:
 | Elemento	|Valor	|
 |--------------:|:------|
 | Exposición	| 10%	|
-| Examenes	| 40%	|
-| Prácticas	| 40%	|
+| Examenes	| 30%	|
+| Prácticas	| 50%	|
 | Tareas	| 10%	|
 
 Las participaciones que aporten ideas a la clase pueden ayudar a incrementar la calificación final
@@ -214,7 +220,7 @@ Las participaciones que aporten ideas a la clase pueden ayudar a incrementar la 
 
 + Las tareas y programas podrán ser enviados por correo a la siguiente dirección:
 
-    * <code></code>
+    * <code><SistemasOperativos@ciencias.unam.mx></code>
 
 + Para las tareas que se entreguen en papel, se sugiere hacer uso de hojas recicladas
 
@@ -228,16 +234,21 @@ Las participaciones que aporten ideas a la clase pueden ayudar a incrementar la 
 
 ### Bibliografía básica
 
-> Operating System Concepts, 9th edition, 2013
-> Silverschatz, Abraham; Galvin, Peter; Gagne, Greg
-> John Wiley & Sons
+> Operating System Concepts, 9th edition, 2013 <br/>
+> Silverschatz, Abraham; Galvin, Peter; Gagne, Greg <br/>
+> John Wiley & Sons <br/>
 
-> Sistemas Operativos Modernos, 3a edición, 2009
-> Tanenbaum, Andrew S
-> Pearson/Prentice Hall
+> Sistemas Operativos Modernos, 3a edición, 2009 <br/>
+> Tanenbaum, Andrew S <br/>
+> Pearson/Prentice Hall <br/>
 
-> Fundamentos de Sistemas Operativos. Primera edición
-> Golf, Gunnar; Ruiz, Esteban; Bergero, Federico; Meza, Erwin
-> Universidad Nacional Autónoma de México, Instituto de Investigaciones Económicas, Facultad de Ingeniería. 2015
-> Distribuido libremente bajo los términos de la CC BY-SA versión 4.0
-> http://sistop.org/
+> Fundamentos de Sistemas Operativos. Primera edición <br/>
+> Golf, Gunnar; Ruiz, Esteban; Bergero, Federico; Meza, Erwin <br/>
+> Universidad Nacional Autónoma de México, Instituto de Investigaciones Económicas, Facultad de Ingeniería. 2015 <br/>
+> <http://sistop.org/> <br/>
+> Distribuido libremente bajo los términos de la CC BY-SA versión 4.0 <br/>
+
+> xv6. a simple, Unix-like teaching operating system <br/>
+> Russ Cox,Russ; Kaashoek, Frans; Morris, Robert <br/>
+> MIT press, DRAFT as of September 5, 2016 <br/>
+> <http://pdos.csail.mit.edu/6.828/xv6> <br/>
