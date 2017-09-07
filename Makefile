@@ -1,17 +1,20 @@
 SHELL=/bin/bash
 
-RM=/bin/rm
-TIDY=/usr/bin/tidy
-PANDOC=/usr/bin/pandoc
+RM=rm
+TIDY=tidy
+PANDOC=pandoc
 
 TITLE=Sistemas Operativos - Facultad de Ciencias - UNAM
 NAME=index
 SRC=${NAME}.md
 DST=public/${NAME}.html
 
-convert:	${SRC}
-	${PANDOC} -f Markdown -t html5 --self-contained -T "${TITLE}" -i ${SRC} -o ${DST}
-	${TIDY} -quiet -indent -wrap 0 -utf8 -modify ${DST} || true
+all:
+	$(MAKE) index.html practica-pthreads.html
+
+%.html: %.md
+	${PANDOC} -f Markdown -t html5 --self-contained -T "${TITLE}" -i $< -o public/$@
+	${TIDY} -quiet -indent -wrap 0 -utf8 -modify public/$@ || true
 
 clean:	${DST}
 	if [ -e ${DST} ] ; then ${RM} -v ${DST} ; fi ;

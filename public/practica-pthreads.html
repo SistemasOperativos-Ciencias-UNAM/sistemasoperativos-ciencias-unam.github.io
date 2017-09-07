@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.17), see www.w3.org">
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+  <title>Sistemas Operativos - Facultad de Ciencias - UNAM -</title>
+  <style type="text/css">
+code{white-space: pre;}
+  </style><!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+  table.sourceCode { width: 100%; line-height: 100%; }
+  td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+  td.sourceCode { padding-left: 5px; }
+  code > span.kw { color: #007020; font-weight: bold; }
+  code > span.dt { color: #902000; }
+  code > span.dv { color: #40a070; }
+  code > span.bn { color: #40a070; }
+  code > span.fl { color: #40a070; }
+  code > span.ch { color: #4070a0; }
+  code > span.st { color: #4070a0; }
+  code > span.co { color: #60a0b0; font-style: italic; }
+  code > span.ot { color: #007020; }
+  code > span.al { color: #ff0000; font-weight: bold; }
+  code > span.fu { color: #06287e; }
+  code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+</head>
+
+<body>
+  <h1 id="universidad-nacional-autónoma-de-méxico">Universidad Nacional Autónoma de México</h1>
+
+  <h1 id="facultad-de-ciencias">Facultad de Ciencias</h1>
+
+  <h1 id="ciencias-de-la-computación">Ciencias de la Computación</h1>
+
+  <h2 id="sistemas-operativos">Sistemas Operativos</h2>
+
+  <p>Semestre 2018-1</p>
+
+  <h3 id="práctica-pthreads">Práctica <code>pthreads</code></h3>
+
+  <h4 id="programa-1">Programa 1</h4>
+
+  <p>Crear un programa que implemente la biblioteca <code>pthread.h</code>, que incluya comentarios explicando cada bloque de funciones y que cumpla con los siguientes requerimientos:</p>
+
+  <ol class="incremental" type="1">
+    <li>Crear un programa con 2 hilos:</li>
+  </ol>
+
+  <ul class="incremental">
+    <li>Hilo principal (implicito en <code>main</code>)</li>
+
+    <li>Hilo explícito (<code>pthread_create</code>)</li>
+  </ul>
+
+  <ol class="incremental" start="2" type="1">
+    <li>Establecer en la <em>función de trabajo</em> del hilo explícito</li>
+  </ol>
+
+  <ul class="incremental">
+    <li>Imprimir fecha actual</li>
+
+    <li>El nombre de la máquina (hostname)</li>
+
+    <li>El nombre de los integrantes del equipo</li>
+
+    <li>Llamar <code>pthread_exit(NULL)</code> al terminar la <em>función de trabajo</em></li>
+  </ul>
+
+  <ol class="incremental" start="3" type="1">
+    <li>Hacer un archivo <code>Makefile</code> que ayude a compilar y (opcionalmente) ejecutar el programa</li>
+  </ol>
+
+  <ul class="incremental">
+    <li>Explicar con comentarios que hace cada línea o bloque</li>
+
+    <li>Es válido utilizar directivas <code>@echo</code> por si quieren imprimir mensajes en algún punto</li>
+  </ul>
+  <pre class="sourceCode Makefile">
+<code class="sourceCode makefile"><span class="co"># comentario</span>
+
+<span class="dv">hello:</span><span class="dt">  hello.c</span>
+    cc -pthread -o hello hello.c
+    <span class="ch">@</span><span class="fu">echo Corriendo</span>
+    ./hello</code>
+</pre>
+
+  <h4 id="ejemplos-de-código-y-ayuda-adicional">Ejemplos de código y ayuda adicional</h4>
+
+  <ul class="incremental">
+    <li>
+      <p>Repositorio con ejemplos de código que utiliza <code>pthreads</code> [1]</p>
+
+      <ul class="incremental">
+        <li>[1] <a href="https://gitlab.com/SistemasOperativos-Ciencias-UNAM/pthreads">https://gitlab.com/SistemasOperativos-Ciencias-UNAM/pthreads</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <p>Ubicar el archivo <code>hello.c</code> en el directorio <code>src</code> [2]</p>
+
+      <ul class="incremental">
+        <li>[2] <a href="https://gitlab.com/SistemasOperativos-Ciencias-UNAM/pthreads/blob/master/src/hello.c">https://gitlab.com/SistemasOperativos-Ciencias-UNAM/pthreads/blob/master/src/hello.c</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <p>Intentar compilarlo utilizando alguna de estas formas:</p>
+
+      <ul class="incremental">
+        <li><code>cc -lpthread -o hello hello.c</code></li>
+
+        <li><code>gcc -pthread -o hello hello.c</code></li>
+      </ul>
+    </li>
+
+    <li>
+      <p>Utilizar la forma correcta de compilación en el <code>Makefile</code></p>
+
+      <ul class="incremental">
+        <li>Comentar porque funciona o no el comando de compilación</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4 id="subir-el-código">Subir el código</h4>
+
+  <ol class="incremental" start="0" type="1">
+    <li>Procedimiento
+
+      <ul class="incremental">
+        <li><code>/* Clonar el repositorio */</code></li>
+      </ul>
+    </li>
+
+    <li><code>$ git clone https://gitlab.com/SistemasOperativos-Ciencias-UNAM/2018-1/equipo-�</code></li>
+
+    <li>
+      <code>$ cd equipo-�</code>
+
+      <ul class="incremental">
+        <li><code>/* Inicializar los datos del autor en el repositorio local */</code></li>
+      </ul>
+    </li>
+
+    <li><code>$ git config user.name "John Doe"</code></li>
+
+    <li>
+      <code>$ git config user.email "user@example.com"</code>
+
+      <ul class="incremental">
+        <li><code>/* Copiar archivos al directorio */</code></li>
+      </ul>
+    </li>
+
+    <li><code>$ git add archivo.c</code></li>
+
+    <li><code>$ git add Makefile</code></li>
+
+    <li><code>$ git commit</code></li>
+
+    <li>
+      <code>$ git push -u origin master</code>
+
+      <ul class="incremental">
+        <li><code>/* Si hay cambios repetir desde 5 y cambiar 8 por 9 y 10 */</code></li>
+      </ul>
+    </li>
+
+    <li><code>$ git pull</code></li>
+
+    <li><code>$ git push</code></li>
+  </ol>
+
+  <p><code>�</code> Significa que ahí va el número de tu equipo</p>
+
+  <h4 id="recursos-de-ayuda">Recursos de ayuda</h4>
+
+  <ul class="incremental">
+    <li>
+      <p>Mini tutorial interactivo de git [3]</p>
+
+      <ul class="incremental">
+        <li>[3] <a href="https://try.github.io/">https://try.github.io/</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <p>Hoja de ayuda de comandos de git [4] [5]</p>
+
+      <ul class="incremental">
+        <li>[4] <a href="https://services.github.com/on-demand/downloads/es_ES/github-git-cheat-sheet/">https://services.github.com/on-demand/downloads/es_ES/github-git-cheat-sheet/</a></li>
+
+        <li>[5] <a href="https://about.gitlab.com/images/press/git-cheat-sheet.pdf">https://about.gitlab.com/images/press/git-cheat-sheet.pdf</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <p>Páginas de manual (RTFM!):</p>
+    </li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr class="header">
+        <th style="text-align: left;"><code>En terminal</code></th>
+
+        <th style="text-align: left;">En línea</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="odd">
+        <td style="text-align: left;"><code>man 7 pthreads</code></td>
+
+        <td style="text-align: left;"><a href="https://linux.die.net/man/7/pthreads">https://linux.die.net/man/7/pthreads</a></td>
+      </tr>
+
+      <tr class="even">
+        <td style="text-align: left;"><code>man 3 pthread_create</code></td>
+
+        <td style="text-align: left;"><a href="https://linux.die.net/man/3/pthread_create">https://linux.die.net/man/3/pthread_create</a></td>
+      </tr>
+
+      <tr class="odd">
+        <td style="text-align: left;"><code>man 3 pthread_exit</code></td>
+
+        <td style="text-align: left;"><a href="https://linux.die.net/man/3/pthread_exit">https://linux.die.net/man/3/pthread_exit</a></td>
+      </tr>
+
+      <tr class="even">
+        <td style="text-align: left;"><code>man 3 gethostbyname</code></td>
+
+        <td style="text-align: left;"><a href="https://linux.die.net/man/3/gethostbyname">https://linux.die.net/man/3/gethostbyname</a></td>
+      </tr>
+
+      <tr class="odd">
+        <td style="text-align: left;"><code>man 3 gethostbyaddr</code></td>
+
+        <td style="text-align: left;"><a href="https://linux.die.net/man/3/gethostbyaddr">https://linux.die.net/man/3/gethostbyaddr</a></td>
+      </tr>
+
+      <tr class="even">
+        <td style="text-align: left;"><code>man 3 gethostname</code></td>
+
+        <td style="text-align: left;"><a href="https://linux.die.net/man/3/gethostname">https://linux.die.net/man/3/gethostname</a></td>
+      </tr>
+
+      <tr class="odd">
+        <td style="text-align: left;"><code>man 3 gethostent</code></td>
+
+        <td style="text-align: left;"><a href="https://linux.die.net/man/3/gethostent">https://linux.die.net/man/3/gethostent</a></td>
+      </tr>
+
+      <tr class="even">
+        <td style="text-align: left;"><code>man 3 gethostid</code></td>
+
+        <td style="text-align: left;"><a href="https://linux.die.net/man/3/gethostid">https://linux.die.net/man/3/gethostid</a></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
