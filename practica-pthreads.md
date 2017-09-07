@@ -14,20 +14,20 @@ Crear un programa que implemente la biblioteca `pthread.h`, que incluya comentar
 
 1. Crear un programa con 2 hilos:
 
-+ Hilo principal (implicito en `main`)
-+ Hilo explícito (`pthread_create`)
+  + Hilo principal (implicito en `main`)
+  + Hilo explícito (`pthread_create`)
 
 2. Establecer en la *función de trabajo* del hilo explícito
 
-+ Imprimir fecha actual
-+ El nombre de la máquina (hostname)
-+ El nombre de los integrantes del equipo
-+ Llamar `pthread_exit(NULL)` al terminar la *función de trabajo*
+  + Imprimir fecha actual
+  + El nombre de la máquina (hostname)
+  + El nombre de los integrantes del equipo
+  + Llamar `pthread_exit(NULL)` al terminar la *función de trabajo*
 
 3. Hacer un archivo `Makefile` que ayude a compilar y (opcionalmente) ejecutar el programa
 
-+ Explicar con comentarios que hace cada línea o bloque
-+ Es válido utilizar directivas `@echo` por si quieren imprimir mensajes en algún punto
+  + Explicar con comentarios que hace cada línea o bloque
+  + Es válido utilizar directivas `@echo` por si quieren imprimir mensajes en algún punto
 
 ```Makefile
 # comentario
@@ -73,7 +73,7 @@ hello:	hello.c
  8. `$ git push -u origin master`
     * ` /*	Si hay cambios repetir desde 5 y cambiar 8 por 9 y 10	*/`
  9. `$ git pull`
- 9. `$ git push`
+10. `$ git push`
 
 `�` Significa que ahí va el número de tu equipo
 
