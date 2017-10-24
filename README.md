@@ -234,24 +234,26 @@ Las participaciones que aporten ideas a la clase pueden ayudar a incrementar la 
 
 ### Bibliografía básica
 
-> Operating System Concepts, 9th edition, 2013 <br/>
-> Silverschatz, Abraham; Galvin, Peter; Gagne, Greg <br/>
-> John Wiley & Sons <br/>
+>>>
+Operating System Concepts, 9th edition, 2013 <br/>
+Silverschatz, Abraham; Galvin, Peter; Gagne, Greg <br/>
+John Wiley & Sons <br/>
 
-> Sistemas Operativos Modernos, 3a edición, 2009 <br/>
-> Tanenbaum, Andrew S <br/>
-> Pearson/Prentice Hall <br/>
+Sistemas Operativos Modernos, 3a edición, 2009 <br/>
+Tanenbaum, Andrew S <br/>
+Pearson/Prentice Hall <br/>
 
-> Fundamentos de Sistemas Operativos. Primera edición <br/>
-> Golf, Gunnar; Ruiz, Esteban; Bergero, Federico; Meza, Erwin <br/>
-> Universidad Nacional Autónoma de México, Instituto de Investigaciones Económicas, Facultad de Ingeniería. 2015 <br/>
-> <http://sistop.org/> <br/>
-> Distribuido libremente bajo los términos de la CC BY-SA versión 4.0 <br/>
+Fundamentos de Sistemas Operativos. Primera edición <br/>
+Golf, Gunnar; Ruiz, Esteban; Bergero, Federico; Meza, Erwin <br/>
+Universidad Nacional Autónoma de México, Instituto de Investigaciones Económicas, Facultad de Ingeniería. 2015 <br/>
+<http://sistop.org/> <br/>
+Distribuido libremente bajo los términos de la CC BY-SA versión 4.0 <br/>
 
-> xv6. a simple, Unix-like teaching operating system <br/>
-> Russ Cox,Russ; Kaashoek, Frans; Morris, Robert <br/>
-> MIT press, DRAFT as of September 5, 2016 <br/>
-> <http://pdos.csail.mit.edu/6.828/xv6> <br/>
+xv6. a simple, Unix-like teaching operating system <br/>
+Russ Cox,Russ; Kaashoek, Frans; Morris, Robert <br/>
+MIT press, DRAFT as of September 5, 2016 <br/>
+<http://pdos.csail.mit.edu/6.828/xv6> <br/>
+>>>
 
 ### Ligas de interés
 
