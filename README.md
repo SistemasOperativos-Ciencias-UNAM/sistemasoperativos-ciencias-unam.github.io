@@ -52,87 +52,87 @@ Semestre 2018-1
 
 1. Introducción a los sistemas operativos
 
-    a. Conceptos de sistemas operativos
-    b. Administración y manejo de recursos
-    c. Maquinas virtuales
-    d. Elementos y estructura de un sistema operativo
-    e. Tipos de sistemas operativos
+    1. Conceptos de sistemas operativos
+    2. Administración y manejo de recursos
+    3. Maquinas virtuales
+    4. Elementos y estructura de un sistema operativo
+    5. Tipos de sistemas operativos
 
 2. Procesos
 
-    a. Descripción de un proceso
-    b. Creación y finalización de procesos
-    c. Estado de un proceso
-    d. Comunicación entre procesos
-    e. Procesos y máquinas virtuales
+    1. Descripción de un proceso
+    2. Creación y finalización de procesos
+    3. Estado de un proceso
+    4. Comunicación entre procesos
+    5. Procesos y máquinas virtuales
 
 3. Hilos
 
-    a. Revisión del concepto de hilo
-    b. Uso e implementación de hilos
-    c. Modelos de hilo simple y multihilos
-    d. Hilos en sistemas distribuidos
+    1. Revisión del concepto de hilo
+    2. Uso e implementación de hilos
+    3. Modelos de hilo simple y multihilos
+    4. Hilos en sistemas distribuidos
 
 4. Planificación
 
-    a. Conceptos básicos
-    b. Criterios y algoritmos de planificación
-    c. Planificación de hilos
-    d. Planificación en sistemas distribuidos
-    e. Problemas clásicos
+    1. Conceptos básicos
+    2. Criterios y algoritmos de planificación
+    3. Planificación de hilos
+    4. Planificación en sistemas distribuidos
+    5. Problemas clásicos
 
 5. Comunicación y sincronización de procesos
 
-    a. Condiciones de carrera
-    b. Región crítica
-    c. Exclusión mutua y solución de Peterson
-    d. Semáforos
-    e. Monitores
-    f. Problemas y ejemplos
+    1. Condiciones de carrera
+    2. Región crítica
+    3. Exclusión mutua y solución de Peterson
+    4. Semáforos
+    5. Monitores
+    6. Problemas y ejemplos
 
 6. Interbloqueo
 
-    a. Modelado de interbloqueos
-    b. Métodos para el manejo de interbloqueos
-    c. Prevención y evitación de interbloqueos
+    1. Modelado de interbloqueos
+    2. Métodos para el manejo de interbloqueos
+    3. Prevención y evitación de interbloqueos
 
 7. Manejo de memoria principal
 
-    a. Conceptos generales
-    b. Intercambio
-    c. Asignación de memoria contigua
-    d. Paginación
-    e. Tablas de páginas
-    f. Segmentación
-    g. Virtualización de la memoria
+    1. Conceptos generales
+    2. Intercambio
+    3. Asignación de memoria contigua
+    4. Paginación
+    5. Tablas de páginas
+    6. Segmentación
+    7. Virtualización de la memoria
 
 8. Manejo de memoria virtual
 
-    a. Introducción
-    b. Paginación sobre demanda
-    c. Copy-on-write
-    d. Reemplazo de páginas
-    e. Manejo de marcos
+    1. Introducción
+    2. Paginación sobre demanda
+    3. Copy-on-write
+    4. Reemplazo de páginas
+    5. Manejo de marcos
 
 9. Sistemas de archivos
 
-    a. Conceptos generales
-    b. Métodos de acceso
-    c. Estructura de directorios y discos
-    d. Estructura de un sistema de archivos
-    e. Implementación de sistemas de archivos y directorios
-    f. Métodos de asignación
-    g. Manejo de espacio libre
-    h. Recuperación de sistemas de archivos
-    i. Archivos compartidos
+    1. Conceptos generales
+    2. Métodos de acceso
+    3. Estructura de directorios y discos
+    4. Estructura de un sistema de archivos
+    5. Implementación de sistemas de archivos y directorios
+    6. Métodos de asignación
+    7. Manejo de espacio libre
+    8. Recuperación de sistemas de archivos
+    9. Archivos compartidos
 
 10. Entrada y salida
 
-    a. Introducción
-    b. Hardware y software de entrada y salida
-    c. Subsistema de entrada y salida en el Kernel
-    d. Peticiones de entrada y salida y operaciones de hardware
-    e. Virtualización de la entrada y salida
+    1. Introducción
+    2. Hardware y software de entrada y salida
+    3. Subsistema de entrada y salida en el Kernel
+    4. Peticiones de entrada y salida y operaciones de hardware
+    5. Virtualización de la entrada y salida
 
 ### Evaluación del semestre
 
