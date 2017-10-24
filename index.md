@@ -252,3 +252,11 @@ Las participaciones que aporten ideas a la clase pueden ayudar a incrementar la 
 > Russ Cox,Russ; Kaashoek, Frans; Morris, Robert <br/>
 > MIT press, DRAFT as of September 5, 2016 <br/>
 > <http://pdos.csail.mit.edu/6.828/xv6> <br/>
+
+### Ligas de interés
+
++ <http://www.fciencias.unam.mx/asignaturas/713.pdf>
++ <http://www.fciencias.unam.mx/docencia/horarios/presentacion/285684>
++ <http://www.fciencias.unam.mx/docencia/horarios/detalles/285684>
++ <http://www.fciencias.unam.mx/docencia/horarios/20181/218/713>
++ <http://www.fciencias.unam.mx/docencia/horarios/20181/1556/713>
