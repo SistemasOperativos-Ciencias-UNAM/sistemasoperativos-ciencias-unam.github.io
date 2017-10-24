@@ -10,7 +10,7 @@ SRC=${NAME}.md
 DST=public/${NAME}.html
 
 all:
-	$(MAKE) index.html practica-pthreads.html
+	$(MAKE) practica-pthreads.html
 
 %.html: %.md
 	${PANDOC} -f Markdown -t html5 --self-contained -T "${TITLE}" -i $< -o public/$@
