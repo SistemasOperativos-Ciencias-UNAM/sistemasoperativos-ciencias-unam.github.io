@@ -4,7 +4,7 @@
 
 ## Sistemas Operativos
 
-Semestre 2018-1
+Semestre 2019-1
 
 + José Luis Torres Rodríguez
 + Andrés Leonardo Hernández Bermúdez
