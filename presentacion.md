@@ -41,12 +41,13 @@ Semestre 2018-1
 
 #### Teoría
 
-+ Lunes y miércoles de 20:00 a 21:00 h
-+ Martes y jueves de 18:30 a 20 h
++ Lunes y miércoles de 19:00 a 20:00 horas en el [salón 304 de Yelizcalli][salon-Y304]
++ Martes y jueves de 18:30 a 20 horas en el [salón 304 de Yelizcalli][salon-Y304]
 
 #### Laboratorio
 
 + Miércoles de 14:00 a 16:00 h
++ [Taller de Sistemas Operativos, Redes de Cómputo, Sistemas Distribuidos y Manejo de Información][Taller-Tlahuizcalpan]
 
 ### Contenido del curso
 
@@ -146,10 +147,10 @@ Calendarización de examenes
 
 | Examen	| Fecha				|
 |--------------:|:------------------------------|
-| Parcial 1	| 24 de agosto     de 2017	|
-| Parcial 2	| 21 de septiembre de 2017	|
-| Parcial 3	| 19 de octubre    de 2017	|
-| Parcial 4	| 16 de noviembre  de 2017	|
+| Parcial 1	| 28 de agosto     de 2018	|
+| Parcial 2	| 25 de septiembre de 2018	|
+| Parcial 3	| 23 de octubre    de 2018	|
+| Parcial 4	| 20 de noviembre  de 2018	|
 
 ##### Requisitos para presentar examen
 
@@ -174,7 +175,7 @@ Calendarización de examenes
 
 #### 6. Participaciones en clase
 
-+ Éstas son OBLIGATORIAS y son un elemento fundamental en la evaluación final
++ Éstas son **OBLIGATORIAS** y son un elemento fundamental en la evaluación final
 + Se tomarán en cuenta sobre todo aquellas participaciones que refuercen lo visto en clase y que constituyan una aportación importante a la misma
 
 ### Notas
@@ -218,9 +219,12 @@ Las participaciones que aporten ideas a la clase pueden ayudar a incrementar la 
     * El trabajo en equipo no implica la división de la tarea por partes iguales entre los integrantes del mismo
     * Se dará por sentado que estos trabajos se desarrollaron colectivamente por todos los integrantes, por lo que no se evaluará cada parte individualmente; cada uno de los miembros de un equipo deberá poder defender, en su totalidad, el trabajo entregado
 
-+ Las tareas y programas podrán ser enviados por correo a la siguiente dirección:
++ Las tareas y programas podrán ser enviados por correo o entregadas a través de Github, dependiendo de la forma en la que se solicite la entrega
 
     * <code><SistemasOperativos@ciencias.unam.mx></code>
+    * <https://SistemasOperativos-Ciencias-UNAM.gitlab.io/>
+
++  Las tareas y prácticas serán enviadas a través de una lista de correo en la que se dará de alta a todos los integrantes del grupo
 
 + Para las tareas que se entreguen en papel, se sugiere hacer uso de hojas recicladas
 
@@ -235,30 +239,31 @@ Las participaciones que aporten ideas a la clase pueden ayudar a incrementar la 
 ### Bibliografía básica
 
 >>>
-Operating System Concepts, 9th edition, 2013 <br/>
-Silverschatz, Abraham; Galvin, Peter; Gagne, Greg <br/>
-John Wiley & Sons <br/>
++ Operating System Concepts, 9th edition, 2013
+    Silverschatz, Abraham; Galvin, Peter; Gagne, Greg
+    John Wiley & Sons
 
-Sistemas Operativos Modernos, 3a edición, 2009 <br/>
-Tanenbaum, Andrew S <br/>
-Pearson/Prentice Hall <br/>
++ Sistemas Operativos Modernos, 3a edición, 2009
+    Tanenbaum, Andrew S.
+    Pearson/Prentice Hall
 
-Fundamentos de Sistemas Operativos. Primera edición <br/>
-Golf, Gunnar; Ruiz, Esteban; Bergero, Federico; Meza, Erwin <br/>
-Universidad Nacional Autónoma de México, Instituto de Investigaciones Económicas, Facultad de Ingeniería. 2015 <br/>
-<http://sistop.org/> <br/>
-Distribuido libremente bajo los términos de la CC BY-SA versión 4.0 <br/>
-
-xv6. a simple, Unix-like teaching operating system <br/>
-Russ Cox,Russ; Kaashoek, Frans; Morris, Robert <br/>
-MIT press, DRAFT as of September 5, 2016 <br/>
-<http://pdos.csail.mit.edu/6.828/xv6> <br/>
++ Fundamentos de Sistemas Operativos. Primera edición
+    Golf, Gunnar; Ruiz, Esteban; Bergero, Federico; Meza, Erwin
+    Universidad Nacional Autónoma de México, Instituto de Investigaciones Económicas, Facultad de Ingeniería. 2015
+    <http://sistop.org/>
+    Distribuido libremente bajo los términos de la CC BY-SA versión 4.0
 >>>
 
 ### Ligas de interés
 
++ <http://SistemasOperativos-Ciencias-UNAM.gitlab.io/>
++ <https://tinyurl.com/ListaSO-2019-1>
++ <https://groups.google.com/a/ciencias.unam.mx/group/sistemasoperativos-alumnos/>
 + <http://www.fciencias.unam.mx/asignaturas/713.pdf>
-+ <http://www.fciencias.unam.mx/docencia/horarios/presentacion/285684>
-+ <http://www.fciencias.unam.mx/docencia/horarios/detalles/285684>
-+ <http://www.fciencias.unam.mx/docencia/horarios/20181/218/713>
-+ <http://www.fciencias.unam.mx/docencia/horarios/20181/1556/713>
++ <http://www.fciencias.unam.mx/docencia/horarios/presentacion/295737>
++ <http://www.fciencias.unam.mx/docencia/horarios/detalles/295737>
++ <http://www.fciencias.unam.mx/docencia/horarios/20191/218/713>
++ <http://www.fciencias.unam.mx/docencia/horarios/20191/1556/713>
+
+[salon-Y304]: http://www.fciencias.unam.mx/plantel/horariosalon/20191/450 "Salón 304 de Yelizcalli"
+[Taller-Tlahuizcalpan]: http://www.fciencias.unam.mx/plantel/horariosalon/20191/258 "Taller de Sistemas Operativos, Redes de Cómputo, Sistemas Distribuidos y Manejo de Información"
