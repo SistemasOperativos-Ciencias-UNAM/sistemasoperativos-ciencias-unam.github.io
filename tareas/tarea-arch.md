@@ -87,6 +87,11 @@ Nota: Los paquetes se pueden agregar a una instalación ya existente
 + `# lsusb -t`
 + `# lsusb -v`
 
+### Listar los discos instalados en el sistema
+
++ `# lsblk`
++ `# lsblk --all --fs --perms --paths`
+
 ### Listar otros elementos del sistema operativo
 
 + `/proc/interrupts`
@@ -107,7 +112,7 @@ Nota: Los paquetes se pueden agregar a una instalación ya existente
 
 ## Extra
 
-### Información sobre el disco duro
+### Información adicional sobre el disco duro
 
 + Instalar el paquete `smartmontools` y obtener la salida de los siguientes comandos:
 
