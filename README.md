@@ -22,6 +22,8 @@ Semestre 2019-1
 
 ### Tareas
 
++ [Arquitectura y componentes de una computadora](tareas/tarea-arch.md)
+
 ### Ligas de interés
 
 + <http://SistemasOperativos-Ciencias-UNAM.gitlab.io/>
