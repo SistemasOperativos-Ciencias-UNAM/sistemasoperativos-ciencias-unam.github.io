@@ -67,6 +67,44 @@ Nota: Los paquetes se pueden agregar a una instalación ya existente
 
 + Revisar la [guía rápida de `git`][guia-git]
 + Agregar el archivo `README.md` y los demás archivos al repositorio con `git add`
+
+  - La estructura final del repositorio deberá quedar así:
+
+```
+$ tree -a repositorio/
+repositorio/
+├── README.md
+└── output/
+    ├── .keep
+    ├── proc/
+    │   ├── .keep
+    │   ├── cpuinfo
+    │   ├── meminfo
+    │   ├── interrupts
+    │   ├── modules
+    │   ├── misc
+    │   ├── mounts
+    │   ├── partitions
+    │   ├── schedstat
+    │   ├── swaps
+    │   └── vmstat
+    ├── lsblk
+    ├── lsblk--all--fs--perms--paths
+    ├── lshw
+    ├── lshw-businfo
+    ├── lshw-html
+    ├── lshw-short
+    ├── lspci
+    ├── lspci-v-t
+    ├── lspci-vv
+    ├── lsusb
+    ├── lsusb-t
+    ├── lsusb-v
+    ├── smartctl--all_dev-sda
+    ├── smartctl--scan
+    └── smartctl--xall_dev-sda
+```
+
 + Guardar cambios con `git commit`
 + Subir al repositorio con `git push -u origin master`
 
