@@ -21,6 +21,7 @@ Semestre 2019-1
 + [Arquitectura y componentes de computadoras](temas/arch.md "arch.md")
 + [Tipos de _kernel_](temas/kernel.md "kernel.md")
 + [Tipos de archivo en UNIX](temas/filetypes.md "filetypes.md")
++ [Programas y procesos](temas/ps-proc.md "ps-proc.md")
 
 ### Tareas
 
