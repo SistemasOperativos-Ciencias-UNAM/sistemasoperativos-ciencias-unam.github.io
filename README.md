@@ -20,6 +20,7 @@ Semestre 2019-1
 + [Guía rápida de `git`](git.md "9418/tcp")
 + [Arquitectura y componentes de computadoras](temas/arch.md "arch.md")
 + [Tipos de _kernel_](temas/kernel.md "kernel.md")
++ [Tipos de archivo en UNIX](temas/filetypes.md "filetypes.md")
 
 ### Tareas
 
