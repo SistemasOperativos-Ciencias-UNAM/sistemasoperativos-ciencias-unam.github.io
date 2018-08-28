@@ -17,7 +17,7 @@ Semestre 2019-1
 
 ### Temas
 
-+ [Guía rápida de `git`](temas/git.md "9418/tcp")
++ [Guía rápida de `git`](git.md "9418/tcp")
 + [Arquitectura y componentes de computadoras](temas/arch.md "arch.md")
 
 ### Tareas
