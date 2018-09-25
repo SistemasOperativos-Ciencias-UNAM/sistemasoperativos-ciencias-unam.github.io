@@ -4,6 +4,8 @@
 
 ## Sistemas Operativos
 
++ <https://gitlab.com/SistemasOperativos-Ciencias-UNAM/>
+
 Semestre 2019-1
 
 ### Presentación del curso
@@ -12,7 +14,7 @@ Semestre 2019-1
 
 ### Prácticas
 
-+ [Índice de prácticas](http://SistemasOperativos-Ciencias-UNAM.gitlab.io/practicas/ "Índice de prácticas")
++ [Índice de prácticas](https://SistemasOperativos-Ciencias-UNAM.gitlab.io/practicas/ "Índice de prácticas")
 + [Especificaciones de las prácticas en formato PDF](/public/practicas "Archivos PDF de las prácticas")
 
 ### Temas
@@ -29,7 +31,7 @@ Semestre 2019-1
 
 ### Ligas de interés
 
-+ <http://SistemasOperativos-Ciencias-UNAM.gitlab.io/>
++ <https://SistemasOperativos-Ciencias-UNAM.gitlab.io/>
 + <https://tinyurl.com/ListaSO-2019-1>
 + <https://groups.google.com/a/ciencias.unam.mx/group/sistemasoperativos-alumnos/>
 + <http://www.fciencias.unam.mx/asignaturas/713.pdf>
