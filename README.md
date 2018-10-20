@@ -28,6 +28,7 @@ Semestre 2019-1
 ### Tareas
 
 + [Arquitectura y componentes de una computadora](tareas/tarea-arch.md)
++ [Programas de sistema de archivos, procesos, hilos, señales y sockets](tareas/programas.md)
 
 ### Ligas de interés
 
