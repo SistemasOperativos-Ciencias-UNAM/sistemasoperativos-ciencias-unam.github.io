@@ -2,11 +2,22 @@
 
 ## Objetivo
 
-Implementar de manera independiente los componentes de un demonio estándar de red UNIX
++ Implementar de manera independiente los componentes de un demonio estándar de red UNIX
+
+## Lineamientos
+
++ Juntar 10 puntos
++ Se debe entregar mínimo 1 programa y máximo 3 por persona
 
 ## Restricciones
 
-Esta tarea debe ser entregada **individualmente**
++ Fecha de entrega **Lunes 12 de noviembre de 2018**
+  - Levantar un _issue_ a la cuenta `@tonejo` para avisar que ya se completó la tarea
++ Esta tarea debe ser entregada **individualmente**
++ Los programas se deben entregar en un repositorio en GitLab
++ Se debe redactar la documentación en el archivo `README.md`
++ El repositorio debe incluir un archivo `Makefile` que compile y realice las pruebas de cada programa
++ Para las pruebas se debe escribir un _script_ que ejecute el programa con las opciones y archivos de datos necesarios para realizar las pruebas
 
 ## Requisitos
 
