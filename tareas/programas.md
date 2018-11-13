@@ -11,7 +11,7 @@
 
 ## Restricciones
 
-+ Fecha de entrega **Lunes 12 de noviembre de 2018**
++ Fecha de entrega **Lunes 19 de noviembre de 2018**
   - Levantar un _issue_ a la cuenta `@tonejo` para avisar que ya se completó la tarea
 + Esta tarea debe ser entregada **individualmente**
 + Los programas se deben entregar en un repositorio en GitLab
