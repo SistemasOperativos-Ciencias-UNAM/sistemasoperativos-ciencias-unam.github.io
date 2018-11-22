@@ -29,6 +29,7 @@ Semestre 2019-1
 
 + [Arquitectura y componentes de una computadora](tareas/tarea-arch.md)
 + [Programas de sistema de archivos, procesos, hilos, señales y sockets](tareas/programas.md)
++ [Módulos de _kernel_](tareas/linux-module.md)
 
 ### Ligas de interés
 
