@@ -2,27 +2,55 @@
 
 ## Objetivo
 
++ Implementar un módulo de _kernel_ Linux que regrese información sobre el tiempo EPOCH actual, un UUID o que simule la funcionalidad de `/dev/zero`
+
 ## Lineamientos
+
++ Elegir un módulo de la lista
++ Fecha de entrega **Viernes 07 de diciembre de 2018**
+  - Levantar un _issue_ a la cuenta `@tonejo` para avisar que ya se completó la tarea
++ Esta tarea debe ser entregada **individualmente**
++ Los programas se deben entregar en un repositorio en GitLab
+  - Anotar la liga del repositorio en la [lista del curso](https://tinyurl.com/ListaSO-2019-1)
 
 ## Restricciones
 
++ En el repositorio deben existir los siguientes archivos:
+
+| Archivo       | Descripción |
+|:-------------:|:-----------:|
+| `README.md`   | Descripción del módulo y su funcionamiento e instrucciones para compilarlo y probarlo |
+| `Makefile`    | Contiene las reglas para compilar, limpiar y hacer las pruebas del módulo |
+| `modulo.c`    | Código fuente del módulo |
+| `modinfo.txt` | Salida de ejecutar `modinfo` contra el módulo que compilaron con `make` |
+
++ Escribir en el código fuente las siguientes líneas para identificar el módulo, autor y qué licencia tiene:
+
+```
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Andrés Hernández <andres@example.com>");
+MODULE_DESCRIPTION("Descripción corta de que hace el módulo");
+MODULE_VERSION("0.1");
+```
+
+Como cada persona es autor de su módulo, elegir una licencia de alguno de estos sitios:
+
++ <https://opensource.org/licenses>
++ <https://choosealicense.com/licenses/>
++ <https://tldrlegal.com/licenses/browse>
++ Pueden tambien elegir una licencia _privativa_ si crean el módulo _desde cero_
+
 ## Requisitos
 
-Revisar la documentación del kernel para la versión del kernel que se está ejecutando
++ Compilador `cc`
++ Cabeceras estándar de GNU/Linux
++ Cabeceras de desarrollo del _kernel_ Linux
+
+El entorno de desarrollo se instala con el siguiente comando:
 
 ```
-$ uname -r
-4.9.0-8-amd64
+# apt install build-essential linux-headers-$(uname -r)
 ```
-
-+ Se pueden tomar los dos primeros dígitos de la versión del kernel para revisar la documentación (ej. 4.9 o 4.15)
-+ Agregar el número de versión al final de la URL para ir a la documentación específica:
-
-+ URLs de documentación para la versión 4.9
-
-  *  <https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/?h=v4.9>
-  *  <https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/Documentation?h=v4.9>
-  *  <https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/include/linux?h=v4.9>
 
 ## Lista de módulos
 
@@ -165,3 +193,45 @@ $ hexdump -C arch2
 + <https://linux.die.net/man/1/hexdump>
 + <http://www.tldp.org/LDP/lkmpg/2.6/html/x323.html>
 
+--------------------------------------------------------------------------------
+
+## Documentación del _kernel_
+
+### Función `printk`
+
+Se puede utilizar la función `printk` para imprimir mensajes a las bitácoras del sistema:
+
+* `/var/log/messages`
+* `/var/log/dmesg`
+* `/var/log/kern.log`
+* `/var/log/syslog`
+
+Ayuda de la función `printk`:
+
++ <https://elinux.org/Debugging_by_printing>
++ <https://www.kernel.org/doc/html/latest/core-api/printk-formats.html>
+
+### Documentación del _kernel_ Linux
+
+Revisar la documentación del kernel para la versión del kernel que se está ejecutando
+
+```
+$ uname -r
+4.9.0-8-amd64
+```
+
++ Se pueden tomar los dos primeros dígitos de la versión del kernel para revisar la documentación (ej. 4.9 o 4.15)
++ Agregar el número de versión al final de la URL para ir a la documentación específica:
+
++ URLs de documentación para la versión 4.9
+
+  *  <https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/?h=v4.9>
+  *  <https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/Documentation?h=v4.9>
+  *  <https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/include/linux?h=v4.9>
+
+#### Ligas de ayuda adicionales
+
++ <http://tldp.org/LDP/lkmpg/2.6/html/lkmpg.html>
++ <http://www.tldp.org/LDP/lkmpg/2.6/html/index.html>
++ <http://www.tldp.org/LDP/lkmpg/2.6/html/x121.html>
++ <http://www.tldp.org/LDP/lkmpg/2.6/html/x323.html>
