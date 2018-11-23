@@ -15,6 +15,8 @@
 
 ## Restricciones
 
+### Archivos entregables
+
 + En el repositorio deben existir los siguientes archivos:
 
 | Archivo       | Descripción |
@@ -23,6 +25,24 @@
 | `Makefile`    | Contiene las reglas para compilar, limpiar y hacer las pruebas del módulo |
 | `modulo.c`    | Código fuente del módulo |
 | `modinfo.txt` | Salida de ejecutar `modinfo` contra el módulo que compilaron con `make` |
+
++ En todos los casos se obtendrá un _dispositivo de caracteres_ que deberá ser leído por cualquier usuario del sistema
+
+### Uso de bibliotecas externas
+
++ El código fuente del _kernel_ Linux es **autocontenido**, por lo que no se recomienda el uso de bibliotecas externas de C en el código
+
++ Para los módulos de `date` y `uuid` será necesario que busquen alguna dependencia que les sea útil en la lista de archivos de cabecera oficial del _kernel_:
+
+<https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux>
+
+### Código de ejemplo
+
++ Se puede utilizar como base el código fuente y `Makefile` del módulo que revisamos en clase:
+
+<https://gitlab.com/SistemasOperativos-Ciencias-UNAM/linux-module/tree/master/hello_dev>
+
+### Identificación del módulo y licencia
 
 + Escribir en el código fuente las siguientes líneas para identificar el módulo, autor y qué licencia tiene:
 
@@ -92,8 +112,8 @@ crw-rw-rw-  1  root root  10, 51  Nov 21 18:00  /dev/date
 + <https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/include/linux/ktime.h>
 
 ### `/dev/uuid`
-\
-+ Regresa un [UUID](# "Universally Unique IDentifier") cada vez que se lee el archivo especial `/dev/uuid`
+
++ Regresa un **UUID** (Universally Unique IDentifier) cada vez que se lee el archivo especial `/dev/uuid`
 
 + El módulo recibe un argumento que indica el tipo de versión de UUID que se debe generar
 
@@ -133,7 +153,7 @@ $ cat /dev/uuid
 
 ```
 $ ls -la /dev/uuid
-crw-rw-rw-  1  root root  10, 51  Nov 21 18:00  /dev/date
+crw-rw-rw-  1  root root  10, 51  Nov 21 18:00  /dev/uuid
 ```
 
 + <https://en.wikipedia.org/wiki/UUID>
@@ -235,3 +255,4 @@ $ uname -r
 + <http://www.tldp.org/LDP/lkmpg/2.6/html/index.html>
 + <http://www.tldp.org/LDP/lkmpg/2.6/html/x121.html>
 + <http://www.tldp.org/LDP/lkmpg/2.6/html/x323.html>
++ <https://www.oreilly.com/library/view/linux-device-drivers/0596005903/ch02.html>
