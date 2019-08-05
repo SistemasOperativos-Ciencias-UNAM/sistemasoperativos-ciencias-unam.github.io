@@ -6,7 +6,7 @@
 
 + <https://gitlab.com/SistemasOperativos-Ciencias-UNAM/>
 
-Semestre 2019-1
+Semestre 2020-1
 
 ### Presentación del curso
 
@@ -15,7 +15,6 @@ Semestre 2019-1
 ### Prácticas
 
 + [Índice de prácticas](https://SistemasOperativos-Ciencias-UNAM.gitlab.io/practicas/ "Índice de prácticas")
-+ [Especificaciones de las prácticas en formato PDF](/public/practicas "Archivos PDF de las prácticas")
 
 ### Temas
 
@@ -34,10 +33,14 @@ Semestre 2019-1
 ### Ligas de interés
 
 + <https://SistemasOperativos-Ciencias-UNAM.gitlab.io/>
-+ <https://tinyurl.com/ListaSO-2019-1>
++ <https://gitlab.com/SistemasOperativos-Ciencias-UNAM/>
++ <https://tinyurl.com/ListaSO-2020-1>
++ <https://tinyurl.com/PizarronSO-2020-1>
++ <https://t.me/sistemasoperativos_ciencias_unam>
 + <https://groups.google.com/a/ciencias.unam.mx/group/sistemasoperativos-alumnos/>
 + <http://www.fciencias.unam.mx/asignaturas/713.pdf>
-+ <http://www.fciencias.unam.mx/docencia/horarios/presentacion/295737>
-+ <http://www.fciencias.unam.mx/docencia/horarios/detalles/295737>
-+ <http://www.fciencias.unam.mx/docencia/horarios/20191/218/713>
-+ <http://www.fciencias.unam.mx/docencia/horarios/20191/1556/713>
++ <http://www.fciencias.unam.mx/docencia/horarios/presentacion/305778>
++ <http://www.fciencias.unam.mx/docencia/horarios/detalles/305778>
++ <http://www.fciencias.unam.mx/docencia/horarios/20201/218/713>
++ <http://www.fciencias.unam.mx/docencia/horarios/20201/1556/713>
+
