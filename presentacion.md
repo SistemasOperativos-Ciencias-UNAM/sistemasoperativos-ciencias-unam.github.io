@@ -4,21 +4,20 @@
 
 ## Sistemas Operativos
 
-Semestre 2019-1
+Semestre 2020-1
 
 + José Luis Torres Rodríguez
 + Andrés Leonardo Hernández Bermúdez
-+ Fernando Castañeda González
++ Juan Alberto Camacho Bolaños
 
 ### Requisitos
 
-+ Conocimientos básicos de Linux
++ Conocimientos básicos de GNU/Linux
 + Conocimientos de Arquitectura de Computadoras
 + Conocimientos de programación en un lenguaje estructurado u orientado a objetos
 + No tener materias encimadas en el horario de Sistemas Operativos
 + Asistencia regular a clase
-+ La asistencia a las sesiones de laboratorio es obligatoria
-
++ La asistencia a las sesiones de laboratorio es *obligatoria*
 
 ### Objetivos
 
@@ -30,7 +29,7 @@ Semestre 2019-1
 
 ### Sistemas Operativos
 
-+ Linux
++ GNU/Linux
 + Windows
 
 ### Lenguaje de programación
@@ -41,8 +40,8 @@ Semestre 2019-1
 
 #### Teoría
 
-+ Lunes y miércoles de 19:00 a 20:00 horas en el [salón 304 de Yelizcalli][salon-Y304]
-+ Martes y jueves de 18:30 a 20 horas en el [salón 304 de Yelizcalli][salon-Y304]
++ Lunes y miércoles de 18:30 a 19:30 horas en el [salón 304 de Yelizcalli][salon-Y303]
++ Martes y jueves de 18:30 a 20 horas en el [salón 304 de Yelizcalli][salon-Y303]
 
 #### Laboratorio
 
@@ -135,6 +134,16 @@ Semestre 2019-1
     4. Peticiones de entrada y salida y operaciones de hardware
     5. Virtualización de la entrada y salida
 
+### Sesiones de laboratorio
+
++ Se llevarán a cabo una serie de prácticas cuya finalidad es que el alumno se familiarice con el lenguaje ensamblador (x86) y con el lenguaje C.
+
++ Habrá dos proyectos principales: uno a mitad del curso y otro al finalizar. Estos proyectos tienen como objetivo fijar los conocimientos adquiridos en la parte teórica del curso.
+
++ Toda la información acerca de las sesiones del laboratorio se encuentra en la [sección de prácticas] de este repositorio
+
++ La asistencia a las sesiones de laboratorio es obligatoria
+
 ### Evaluación del semestre
 
 Se considerarán los siguientes elementos para llevar a cabo la evaluación:
@@ -147,10 +156,10 @@ Calendarización de examenes
 
 | Examen	| Fecha				|
 |--------------:|:------------------------------|
-| Parcial 1	| 28 de agosto     de 2018	|
-| Parcial 2	| 25 de septiembre de 2018	|
-| Parcial 3	| 23 de octubre    de 2018	|
-| Parcial 4	| 20 de noviembre  de 2018	|
+| Parcial 1	| 27 de agosto     de 2019	|
+| Parcial 2	| 24 de septiembre de 2019	|
+| Parcial 3	| 22 de octubre    de 2019	|
+| Parcial 4	| 19 de noviembre  de 2019	|
 
 ##### Requisitos para presentar examen
 
@@ -256,14 +265,18 @@ Las participaciones que aporten ideas a la clase pueden ayudar a incrementar la 
 
 ### Ligas de interés
 
-+ <http://SistemasOperativos-Ciencias-UNAM.gitlab.io/>
-+ <https://tinyurl.com/ListaSO-2019-1>
++ <https://SistemasOperativos-Ciencias-UNAM.gitlab.io/>
++ <https://gitlab.com/SistemasOperativos-Ciencias-UNAM/>
++ <https://tinyurl.com/ListaSO-2020-1>
++ <https://tinyurl.com/PizarronSO-2020-1>
++ <https://t.me/sistemasoperativos_ciencias_unam>
 + <https://groups.google.com/a/ciencias.unam.mx/group/sistemasoperativos-alumnos/>
 + <http://www.fciencias.unam.mx/asignaturas/713.pdf>
-+ <http://www.fciencias.unam.mx/docencia/horarios/presentacion/295737>
-+ <http://www.fciencias.unam.mx/docencia/horarios/detalles/295737>
-+ <http://www.fciencias.unam.mx/docencia/horarios/20191/218/713>
-+ <http://www.fciencias.unam.mx/docencia/horarios/20191/1556/713>
++ <http://www.fciencias.unam.mx/docencia/horarios/presentacion/305778>
++ <http://www.fciencias.unam.mx/docencia/horarios/detalles/305778>
++ <http://www.fciencias.unam.mx/docencia/horarios/20201/218/713>
++ <http://www.fciencias.unam.mx/docencia/horarios/20201/1556/713>
 
-[salon-Y304]: http://www.fciencias.unam.mx/plantel/horariosalon/20191/450 "Salón 304 de Yelizcalli"
-[Taller-Tlahuizcalpan]: http://www.fciencias.unam.mx/plantel/horariosalon/20191/258 "Taller de Sistemas Operativos, Redes de Cómputo, Sistemas Distribuidos y Manejo de Información"
+[salon-Y303]: http://www.fciencias.unam.mx/plantel/horariosalon/20191/449 "Salón 303 de Yelizcalli"
+[Taller-Tlahuizcalpan]: http://www.fciencias.unam.mx/plantel/horariosalon/20201/258 "Taller de Sistemas Operativos, Redes de Cómputo, Sistemas Distribuidos y Manejo de Información"
+[sección de prácticas]: https://gitlab.com/SistemasOperativos-Ciencias-UNAM/
