@@ -18,7 +18,7 @@ Semestre 2020-1
 
 ### Prácticas
 
-+ [Repositorio para la entrega de tareas y prácticas](https://sistemasoperativos-ciencias-unam.gitlab.io/2020-1/tareas-so "Las tareas se entregan a traves de merge-request")
++ [Repositorio para la entrega de tareas y prácticas](https://gitlab.com/SistemasOperativos-Ciencias-UNAM/2020-1/tareas-so "Las tareas se entregan a traves de merge-request")
 + [Índice de prácticas](https://SistemasOperativos-Ciencias-UNAM.gitlab.io/practicas/ "Índice de prácticas")
 
 ### Temas
@@ -31,7 +31,7 @@ Semestre 2020-1
 
 ### Tareas
 
-+ [Repositorio para la entrega de tareas y prácticas](https://sistemasoperativos-ciencias-unam.gitlab.io/2020-1/tareas-so "Las tareas se entregan a traves de merge-request")
++ [Repositorio para la entrega de tareas y prácticas](https://gitlab.com/SistemasOperativos-Ciencias-UNAM/2020-1/tareas-so "Las tareas se entregan a traves de merge-request")
 + [Arquitectura y componentes de una computadora](tareas/tarea-arch.md)
 + [Programas de sistema de archivos, procesos, hilos, señales y sockets](tareas/programas.md)
 + [Módulos de _kernel_](tareas/linux-module.md)
