@@ -236,6 +236,8 @@ config.status: creating config.mak.autogen
 config.status: executing config.mak.autogen commands
 ```
 
+[![asciicast](https://asciinema.org/a/267281.svg)](https://asciinema.org/a/267281)
+
 ### Compila programa
 
 Ejecutar `make` para compilar el programa.
