@@ -9,8 +9,7 @@
 ## Lineamientos
 
 + Entregar un script o Makefile para realizar el proceso de forma automática
-+ Instalar los binarios estáticos en `/usr/local`
-+ Instalar los binarios dinámicos en `${HOME}/local`
++ Instalar los binarios en `${HOME}/local`
   - Agregar `${HOME}/local/bin` y  `${HOME}/local/sbin` al `${PATH}`
   - Agregar `${HOME}/local/lib` a `${LD_LIBRARY_PATH}` con `ldconfig`
   - Agregar `${HOME}/local/include` a las rutas donde se buscan los archivos de cabecera
@@ -211,20 +210,8 @@ Optional Packages:
                           ARG is the full path to the Tcl/Tk interpreter.
                           Bare --with-tcltk will make the GUI part only if
                           Tcl/Tk interpreter will be found in a system.
-Some influential environment variables:
-  CC          C compiler command
-  CFLAGS      C compiler flags
-  LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a
-              nonstandard directory <lib dir>
-  LIBS        libraries to pass to the linker, e.g. -l<library>
-  CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if
-              you have headers in a nonstandard directory <include dir>
-  CPP         C preprocessor
 
-Use these variables to override the choices made by `configure' or to help
-it to find libraries and programs with nonstandard names/locations.
-
-Report bugs to <git@vger.kernel.org>.
+	...
 ```
 
 De la salida anterior se pueden observar varias cosas:
@@ -232,10 +219,9 @@ De la salida anterior se pueden observar varias cosas:
 + `PREFIX` es la ubicación donde se instalará el programa. El valor por defecto es `/usr/local`
 + `--with-PACKAGE[=AR$aG]` habilita el uso de otro programa para extender la funcionalidad (ej. OpenSSL para funciones criptográficas y soporte de SSL)
 +  `--without-PACKAGE` deshabilita el uso de ese programa adicional
-+ Existen banderas para el compilador o el _linker_. Vamos a utilizar la bandera `-static` para generar binarios estáticos
 
 ```
-$ LDFLAGS=-static ./configure --prefix=${HOME}/local
+$ ./configure --prefix=${HOME}/local --with-curl --with-openssl --with-libpcre2
 configure: Setting lib to 'lib' (the default)
 configure: Will try -pthread then -lpthread to enable POSIX Threads.
 configure: CHECKS for site configuration
@@ -297,16 +283,26 @@ $ make
     GEN bin-wrappers/test-tool
 ```
 
+[![asciicast](https://asciinema.org/a/267271.svg)](https://asciinema.org/a/267271)
+
 ##### Examinar el programa compilado
 
-Verificar que los binarios sean estáticos. A veces los programas compilados están en el directorio `output` o `bin`.
+A veces los programas compilados están en el directorio `output` o `bin`
 
 ```
 $ file git
-git: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, for GNU/Linux 3.2.0, BuildID[sha1]=248400d62254e174181ed98f3dab59203e89812f, with debug_info, not stripped
+git: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=0bfaa6b79f9d6b3c11d4fbd678b85f964f496180, with debug_info, not stripped
+```
 
+```
 $ ldd git
-	not a dynamic executable
+	linux-vdso.so.1 (0x00007fffd815b000)
+	libpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x00007f82240c0000)
+	libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007f8223ea0000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f8223e90000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f8223e68000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f8223ca0000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f8224460000)
 ```
 
 ### Instalar programa
@@ -323,6 +319,8 @@ install -d -m 755 '/home/tonejito/local/libexec/git-core'
 
 	...
 ```
+
+[![asciicast](https://asciinema.org/a/YjYr2FQcxjMT2Ysr66mrLq750.svg)](https://asciinema.org/a/YjYr2FQcxjMT2Ysr66mrLq750)
 
 Listar el directorio `${HOME}/local`
 
@@ -384,31 +382,61 @@ Inspeccionar los binarios instalados
 
 ```
 $ file ${HOME}/local/bin/*
-/home/tonejito/local/bin/git:                ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, for GNU/Linux 3.2.0, BuildID[sha1]=248400d62254e174181ed98f3dab59203e89812f, with debug_info, not stripped
+/home/tonejito/local/bin/git:                ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=0bfaa6b79f9d6b3c11d4fbd678b85f964f496180, with debug_info, not stripped
 /home/tonejito/local/bin/git-cvsserver:      Perl script text executable
 /home/tonejito/local/bin/gitk:               POSIX shell script, UTF-8 Unicode text executable
-/home/tonejito/local/bin/git-receive-pack:   ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, for GNU/Linux 3.2.0, BuildID[sha1]=248400d62254e174181ed98f3dab59203e89812f, with debug_info, not stripped
-/home/tonejito/local/bin/git-shell:          ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, for GNU/Linux 3.2.0, BuildID[sha1]=de6c0b9de3295282f586a6d90d290a0cd2180c60, with debug_info, not stripped
-/home/tonejito/local/bin/git-upload-archive: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, for GNU/Linux 3.2.0, BuildID[sha1]=248400d62254e174181ed98f3dab59203e89812f, with debug_info, not stripped
-/home/tonejito/local/bin/git-upload-pack:    ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, for GNU/Linux 3.2.0, BuildID[sha1]=248400d62254e174181ed98f3dab59203e89812f, with debug_info, not stripped
+/home/tonejito/local/bin/git-receive-pack:   ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=0bfaa6b79f9d6b3c11d4fbd678b85f964f496180, with debug_info, not stripped
+/home/tonejito/local/bin/git-shell:          ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=d289832e2e1a64d7ae31e768a0044528c7149614, with debug_info, not stripped
+/home/tonejito/local/bin/git-upload-archive: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=0bfaa6b79f9d6b3c11d4fbd678b85f964f496180, with debug_info, not stripped
+/home/tonejito/local/bin/git-upload-pack:    ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=0bfaa6b79f9d6b3c11d4fbd678b85f964f496180, with debug_info, not stripped
 ```
 
 ```
 $ ldd ${HOME}/local/bin/*
 /home/tonejito/local/bin/git:
-	not a dynamic executable
+	linux-vdso.so.1 (0x00007ffdb33f3000)
+	libpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x00007f658eb18000)
+	libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007f658e8f8000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f658e8e8000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f658e8c0000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f658e6f8000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f658eeb8000)
 /home/tonejito/local/bin/git-cvsserver:
 	not a dynamic executable
 /home/tonejito/local/bin/gitk:
 	not a dynamic executable
 /home/tonejito/local/bin/git-receive-pack:
-	not a dynamic executable
+	linux-vdso.so.1 (0x00007ffeb6f4b000)
+	libpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x00007f4d383c8000)
+	libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007f4d381a8000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f4d38198000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f4d38170000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f4d37fa8000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f4d38768000)
 /home/tonejito/local/bin/git-shell:
-	not a dynamic executable
+	linux-vdso.so.1 (0x00007ffeb3993000)
+	libpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x00007f12425e8000)
+	libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007f12423c8000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f12423b8000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f1242390000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f12421c8000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f1242848000)
 /home/tonejito/local/bin/git-upload-archive:
-	not a dynamic executable
+	linux-vdso.so.1 (0x00007ffd3fdcb000)
+	libpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x00007f7c9eee8000)
+	libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007f7c9ecc8000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f7c9ecb8000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f7c9ec90000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f7c9eac8000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f7c9f288000)
 /home/tonejito/local/bin/git-upload-pack:
-	not a dynamic executable
+	linux-vdso.so.1 (0x00007ffd59f4b000)
+	libpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x00007fe338550000)
+	libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007fe338330000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007fe338320000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007fe3382f8000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fe338130000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007fe3388f0000)
 ```
 
 #### Veriricar el programa instalado
