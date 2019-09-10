@@ -57,26 +57,6 @@ hello:	hello.c
 
     * Comentar porque funciona o no el comando de compilación
 
-#### Subir el código
-
- 0. Procedimiento
-    * ` /*	Clonar el repositorio	*/`
- 1. `$ git clone https://gitlab.com/SistemasOperativos-Ciencias-UNAM/2018-1/equipo-�`
- 2. `$ cd equipo-�`
-    * ` /*	Inicializar los datos del autor en el repositorio local	*/`
- 3. `$ git config user.name  "John Doe"`
- 4. `$ git config user.email "user@example.com"`
-    * ` /*	Copiar archivos al directorio	*/`
- 5. `$ git add archivo.c`
- 6. `$ git add Makefile`
- 7. `$ git commit`
- 8. `$ git push -u origin master`
-    * ` /*	Si hay cambios repetir desde 5 y cambiar 8 por 9 y 10	*/`
- 9. `$ git pull`
-10. `$ git push`
-
-`�` Significa que ahí va el número de tu equipo
-
 #### Recursos de ayuda
 
 + Mini tutorial interactivo de git [3]
