@@ -32,7 +32,7 @@ Semestre 2020-1
 ### Tareas
 
 + [Repositorio para la entrega de tareas y prácticas](https://gitlab.com/SistemasOperativos-Ciencias-UNAM/2020-1/tareas-so "Las tareas se entregan a traves de merge-request")
-+ [Arquitectura y componentes de una computadora](tareas/tarea-arch.md)
++ [Compilación e instalación de _software_ desde código fuente](tareas/compile.md)
 + [Programas de sistema de archivos, procesos, hilos, señales y sockets](tareas/programas.md)
 + [Módulos de _kernel_](tareas/linux-module.md)
 
