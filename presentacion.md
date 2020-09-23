@@ -42,11 +42,11 @@ Semestre 2021-1
 
 Profesor
 
-Videos pre-grabados en su [canal de YouTube][canal-youtube-profesor]
+- Videos pre-grabados en su [canal de YouTube][canal-youtube-profesor]
 
 Ayudante
 
-- Miércoles de 19:00 a 20:00 horas
+- Miércoles de 19:00 a 20:00 horas [en esta liga de Google Meet][google-meet-ayudante]
 - Transmision en vivo por Google Meet y las grabaciones se suben al [canal de YouTube][canal-youtube-ayudante]
 
 #### Laboratorio
@@ -294,3 +294,4 @@ Las participaciones que aporten ideas a la clase pueden ayudar a incrementar la 
 [canal-youtube-profesor]: https://www.youtube.com/playlist?list=PLwziW0L5X87xtcbiI9y6vcpxdPsOOx3jh
 [canal-youtube-ayudante]: https://tinyurl.com/SO-Ciencias-UNAM-YouTube
 [canal-youtube-laboratorio]: https://youtu.be/
+[google-meet-ayudante]: https://meet.google.com/qgf-hcjn-ihs
