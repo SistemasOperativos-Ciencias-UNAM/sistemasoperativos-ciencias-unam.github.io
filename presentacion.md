@@ -51,14 +51,14 @@ Ayudante
 
 #### Laboratorio
 
-Dos sesiones
+Dos sesiones en linea por jitsi
 + Martes de 18:30 a 20:00 h
   - Números de lista del 1 al 30
- 
+
 + Jueves de 18:30 a 20:00 h
   - Números de lista del 31 al 60
 
-+ [canal de YouTube][canal-youtube-laboratorio]
++ [Canal de YouTube][canal-youtube-laboratorio]
 
 ### Contenido del curso
 
@@ -293,5 +293,5 @@ Las participaciones que aporten ideas a la clase pueden ayudar a incrementar la 
 
 [canal-youtube-profesor]: https://www.youtube.com/playlist?list=PLwziW0L5X87xtcbiI9y6vcpxdPsOOx3jh
 [canal-youtube-ayudante]: https://tinyurl.com/SO-Ciencias-UNAM-YouTube
-[canal-youtube-laboratorio]: https://youtu.be/
+[canal-youtube-laboratorio]: https://www.youtube.com/playlist?list=PLvJCdq6rEbhq_JgISCEJp3gKp0V9ZrhmP
 [google-meet-ayudante]: https://meet.google.com/qgf-hcjn-ihs
