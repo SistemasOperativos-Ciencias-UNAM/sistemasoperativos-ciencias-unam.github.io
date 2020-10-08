@@ -1,74 +1,43 @@
 # Arquitectura y componentes de computadoras
 
-## POST - Power On Self Test
+## Arquitectura de una computadora
 
-+ <https://wiki.osdev.org/System_Initialization_(x86)>
-+ <https://en.wikipedia.org/wiki/Power-on_self-test>
-+ <https://en.wikipedia.org/wiki/POST_card>
+### x86
 
-## BIOS y UEFI
+Diagrama de bloques de la arquitectura de una computadora x86
 
-+ <https://wiki.osdev.org/BIOS>
-+ <https://wiki.osdev.org/UEFI>
-+ <https://members.uefi.org/learning_center/papers/>
+![https://wiki.dave.eu/index.php/Migrating_from_x86_architecture_to_Naon](../img/X86-pc-arch.png)
 
-## Inicio (boot)
+Anillos de protección x86
 
-+ <https://en.wikipedia.org/wiki/Booting>
-+ <https://wiki.osdev.org/Bootloader>
-+ <https://wiki.osdev.org/Rolling_Your_Own_Bootloader>
-+ <https://wiki.osdev.org/MBR_(x86)>
-+ <https://manybutfinite.com/post/how-computers-boot-up/>
-+ <http://www.drdobbs.com/parallel/booting-an-intel-architecture-system-par/232300699?pgno=1>
-+ <http://www.drdobbs.com/parallel/booting-an-intel-architecture-system-par/232300699?pgno=2>
-+ <http://www.drdobbs.com/parallel/booting-an-intel-architecture-system-par/232300699?pgno=3>
-+ <http://www.drdobbs.com/parallel/booting-an-intel-architecture-system-par/232300699?pgno=4>
-+ <http://lxr.linux.no/>
-+ <https://en.wikipedia.org/wiki/Linux_startup_process>
+![https://en.wikipedia.org/wiki/Protection_ring](../img/Priv_rings.svg)
 
-## Chipset
+### Raspberry Pi
 
-+ <https://manybutfinite.com/post/motherboard-chipsets-memory-map/>
+Diagrama de bloques de la arquitectura de una computadora Raspberry Pi
+
+![https://www.element14.com/community/community/raspberry-pi/blog/2017/01/16/raspberry-pi-3-block-diagram](../img/pi3-block-diagram-rev4.png)
+
+Componentes físicos de una computadora Raspberry Pi
+
+![https://en.wikipedia.org/wiki/Raspberry_Pi](../img/RaspberryPi_3B.svg)
+
+### Relación entre hardware, espacio de kernel y espacio de usuario
+
+![](../img/hw-kernel_space-user_space.png)
+
+- <https://en.wikipedia.org/wiki/Protection_ring>
+
+--------------------------------------------------------------------------------
+
+## Video de la clase
+
+- <https://www.youtube.com/watch?v=nyeHbNPFAcA&list=PLa3Cxza-egQUPeSpVcPY0qXxDlaVkEiE7&index=2>
 
 --------------------------------------------------------------------------------
 
 ## Videos complementarios
 
-History of the Motherboard
-+ <https://www.youtube.com/watch?v=Mw6ha5wxJUI>
+Lista de reproducción en YouTube:
 
-32-bit vs 64-bit Computers & Phones as Fast As Possible
-+ <https://www.youtube.com/watch?v=IknbgnJLSRY>
-
-Coding Communication & CPU Microarchitectures as Fast As Possible
-+ <https://www.youtube.com/watch?v=FkeRMQzD-0Y>
-
-BIOS and UEFI as Fast As Possible
-+ <https://www.youtube.com/watch?v=zIYkol851dU>
-
-CPU Sockets as Fast As Possible
-+ <https://www.youtube.com/watch?v=rShVLBIR2VA>
-
-RAM Speed and Timings As Fast As Possible
-+ <https://www.youtube.com/watch?v=h-TWQ0rS-SI>
-
-DDR Memory vs GDDR Memory as Fast As Possible
-+ <https://www.youtube.com/watch?v=pbgvzVgfoSc>
-
-PCI Express 4.0 as Fast As Possible
-+ <https://www.youtube.com/watch?v=aXMJeozEl4A>
-
-SSDs vs Hard Drives as Fast As Possible
-+ <https://www.youtube.com/watch?v=YQEjGKYXjw8>
-
-Raspberry Pi as Fast As Possible
-+ <https://www.youtube.com/watch?v=5jA8wYqQLBU>
-
-ARM CPUs as Fast As Possible
-+ <https://www.youtube.com/watch?v=X4BxUiqWq8E>
-
-Systems on a Chip (SOCs) as Fast As Possible
-+ <https://www.youtube.com/watch?v=L4XemL7t6hg>
-
-Motherboard VRMs As Fast As Possible
-+ <https://www.youtube.com/watch?v=KRRODHoQAHI>
+- <https://tinyurl.com/SO-Ciencias-UNAM-Videos>

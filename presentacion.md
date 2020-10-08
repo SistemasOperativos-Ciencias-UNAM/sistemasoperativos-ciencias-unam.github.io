@@ -51,10 +51,11 @@ Ayudante
 
 #### Laboratorio
 
-Dos sesiones en linea por jitsi
+Dos sesiones en el [canal de Jitsi del laboratorio][canal-jitsi-laboratorio]
+
 + Martes de 18:30 a 20:00 h
   - Números de lista del 1 al 30
-
+ 
 + Jueves de 18:30 a 20:00 h
   - Números de lista del 31 al 60
 
@@ -292,6 +293,7 @@ Las participaciones que aporten ideas a la clase pueden ayudar a incrementar la 
 [sección de prácticas]: https://gitlab.com/SistemasOperativos-Ciencias-UNAM/
 
 [canal-youtube-profesor]: https://www.youtube.com/playlist?list=PLwziW0L5X87xtcbiI9y6vcpxdPsOOx3jh
-[canal-youtube-ayudante]: https://tinyurl.com/SO-Ciencias-UNAM-YouTube
+[canal-youtube-ayudante]: https://www.youtube.com/playlist?list=PLa3Cxza-egQUMFXSpJKmfcAbq-KyYXn04
 [canal-youtube-laboratorio]: https://www.youtube.com/playlist?list=PLvJCdq6rEbhq_JgISCEJp3gKp0V9ZrhmP
+[canal-jitsi-laboratorio]: https://meet.jit.si/sistop-fciencias
 [google-meet-ayudante]: https://meet.google.com/qgf-hcjn-ihs

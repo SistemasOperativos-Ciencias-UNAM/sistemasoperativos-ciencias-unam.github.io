@@ -25,7 +25,10 @@ Semestre 2021-1
 
 + [Guía rápida de `git`](temas/git.md "9418/tcp")
 + [Arquitectura y componentes de computadoras](temas/arch.md "arch.md")
++ [Historia de los sistemas operativos](temas/history.md "history.md")
++ [Inicio de una computadora x86 o x86_64 con Linux y Windows](temas/boot.md "boot.md")
 + [Tipos de _kernel_](temas/kernel.md "kernel.md")
++ [Directorios en Linux (LSB - FHS)](temas/lsb-fhs.md "lsb-fhs.md")
 + [Tipos de archivo en UNIX](temas/filetypes.md "filetypes.md")
 + [Programas y procesos](temas/ps-proc.md "ps-proc.md")
 
@@ -42,6 +45,9 @@ Semestre 2021-1
 + <https://gitlab.com/SistemasOperativos-Ciencias-UNAM/>
 + <https://tinyurl.com/ListaSO-2021-1>
 + <https://tinyurl.com/PizarronSO-2021-1>
++ <http://tinyurl.com/SO-Ciencias-UNAM-YouTube>
++ <https://tinyurl.com/SO-Ciencias-UNAM-Playlist>
++ <https://tinyurl.com/SO-Ciencias-UNAM-Videos>
 + <https://t.me/sistemasoperativos_ciencias_unam>
 + <https://groups.google.com/a/ciencias.unam.mx/group/sistemasoperativos-alumnos/>
 + <http://www.fciencias.unam.mx/asignaturas/713.pdf>
