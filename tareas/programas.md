@@ -6,15 +6,15 @@
 
 ## Lineamientos
 
-+ Juntar 10 puntos
++ Juntar 10 puntos como mínimo
+  - La tarea se califica _sobre 10_, si se juntan mas de 10 puntos
 + Se debe entregar mínimo 1 programa y máximo 3 por persona
 
 ## Restricciones
 
-+ Fecha de entrega **Lunes 19 de noviembre de 2018**
-  - Levantar un _issue_ a la cuenta `@tonejo` para avisar que ya se completó la tarea
-+ Esta tarea debe ser entregada **individualmente**
-+ Los programas se deben entregar en un repositorio en GitLab
++ Fecha de entrega **Viernes 15 de enero de 2021**
++ La tarea se entrega vía _pull request_, asignar a `@tonejito` y `@umoqnier` como revisores
++ Esta tarea debe ser entregada **por parejas**
 + Se debe redactar la documentación en el archivo `README.md`
 + El repositorio debe incluir un archivo `Makefile` que compile y realice las pruebas de cada programa
 + Para las pruebas se debe escribir un _script_ que ejecute el programa con las opciones y archivos de datos necesarios para realizar las pruebas
@@ -29,15 +29,15 @@
 | puntos | nombre		|
 |:------:|:--------------------:|
 | 1 	 | `reader`		|
-| 1	 | `signals`		|
+| 1	 | `signals`		|	3
 | 2	 | `ps_pthread_props`	|
 | 2	 | `pthread_signals`	|
-| 2	 | `proc_pthread`	|
-| 3	 | `logger`		|
+| 2	 | `proc_pthread`	|	2
+| 3	 | `logger`		|	2
 | 3	 | `logrotate`		|
 | 4 	 | `lsof`		|
 | 4	 | `ps`			|
-| 4	 | `terminator`		|
+| 4	 | `nuke`		|
 | 4	 | `octal-mode`		|
 | 4	 | `shell`		|
 | 4	 | `su`			|
@@ -54,31 +54,92 @@
 ### `reader`
 
 * Lee los archivos de entrada especificados por los argumentos uno en cada subproceso o hilo
+ - Lee desde `STDIN` si no se especifica un archivo de entrada
 * Muestra al final cuantas veces aparece cada vocal en cada archivo y cuántos caracteres fueron leídos por todos los subprocesos e hilos en total
+ - Debe tomar en cuenta las vocales mayúsculas y minúsculas con y sin acentos y la letra U con diéresis:
+ - `aeiou`, `AEIOU`, `áéíóú`, `ÁÉÍÓÚ`, `üÜ`
+ - Considerar únicamente los caracteres de la tabla ASCII, donde cada uno es representado por exactamente 1 byte
+
+##### Archivo de prueba
 
 ```
-archivo	a	e	i	o	u
-total
+$ cat vocales.txt
+AEIOU
+aeiou
 ```
 
+```
+$ cat acentos.txt
+ÁÉÍÓÚ
+áéíóú
+```
+
+```
+$ cat dieresis.txt
+üÜ
+```
+
+##### Ejemplo
+
+Leyendo desde STDIN
+
+```
+$ ./reader < vocales.txt
+vocal:	a	e	i	o	u
+numero:	2	2	2	2	2
+total:	10
+```
+
+Leyendo desde 3 archivos
+
+```
+$ ./reader  vocales.txt  acentos.txt  dieresis.txt
+vocal:	a	e	i	o	u
+numero:	4	4	4	4	6
+total:	22
+```
+
++ <https://ascii-code.com/>
++ <https://ascii-code.net/>
++ <https://coding.tools/ascii-table>
 + <https://linux.die.net/man/1/wc>
 + <https://www.gnu.org/software/parallel/>
 
 ### `signals`
 
-* Asigna un manejador con `signal(2)` para **TERM** y otro diferente con `sigaction(2)` para las otras señales
 * Lanza N procesos hijo y envía una señal diferente a cada uno
+  - Esperar 1 segundo al enviar las señales a cada proceso hijo
+  - Cuando el proceso padre reciba la señal `SIGHUP`, debe enviar la señal `SIGTERM` a **todos** los procesos hijo y crearlos de nuevo
+  - Cuando el proceso padre reciba la señal `SIGINT`, debe enviar la señal `SIGTERM` a **todos** los procesos hijo y salir
+  - Cuando el proceso padre termine de crear los procesos hijos, debe esperar un minuto antes de enviar la señal `SIGTERM` a **todos** los procesos hijo y salir
+
+* Cada proceso hijo deberá entrar en un ciclo de espera largo utilizando `sleep(UINT_MAX)`
+
+* Asignar a cada proceso hijo un manejador con `sigaction(2)` para las señales `1` a `15`
+  - Explicar dentro del código utilizando comentarios si no es posible asignar un manejador a alguna señal
+  - Este manejador asignado deberá imprimir todo el contexto de la señal utilizando la estructura `siginfo_t` y el manejador especificado por `sa_sigaction`
+  - El contexto de la señal recibida deberá ser impreso a `STDERR`, debe incluir la fecha y hora actual
+  - Adicionalmente se debe imprimir el contexto de la señal a las bitácoras del sistema utilizando `syslog(3)`
+  - Después de manejar las señales `1` a `15` el programa debe salir exitosamente
+
+* Asignar a cada proceso hijo un manejador con `signal(2)` para las señales comúnes entre Linux y macOS con identificador entre `16` y `31`
+  - Ejecutar lo siguiente para ver las señales en común `$ paste signal/Linux.txt signal/macOS.txt`
+  - Imprimir el número de la señal recibida, así como la fecha y hora actual a `STDERR` y a las bitácoras del sistema utilizando `syslog(3)`
+  - Los manejadores de señales `16` a `31` no deben causar la salida del programa
 
 + <https://linux.die.net/man/7/signal>
 + <https://linux.die.net/man/2/signal>
 + <https://linux.die.net/man/2/sigaction>
 + <https://linux.die.net/man/3/kill>
++ <https://linux.die.net/man/3/sleep>
++ <https://linux.die.net/man/3/syslog>
++ [`signal/Linux.txt`](https://gitlab.com/SistemasOperativos-Ciencias-UNAM/sistemasoperativos-ciencias-unam.gitlab.io/-/tree/master/temas/signal/Linux.txt)
++ [`signal/macOS.txt`](https://gitlab.com/SistemasOperativos-Ciencias-UNAM/sistemasoperativos-ciencias-unam.gitlab.io/-/tree/master/temas/signal/macOS.txt)
 
 ### `ps_pthread_props`
 
-* Imprime todas las propiedades de un proceso y de todos sus hilos
-* Revisar las estructuras que se generan en `/proc/<pid>` y `/proc/<pid>/task/<tid>`
-  - No se deben leer estos archivos, sino que se debe obtener esta información mediante llamadas al sistema
+* Imprime todas las propiedades de un **proceso** y de todos sus **hilos**
+* Interpretar la información presente en `/proc/<pid>` y `/proc/<pid>/task/<tid>`
 * Averiguar cómo se pueden obtener las métricas y estadísticas que generan `top(1)` y `htop(1)`
 
 + <https://linux.die.net/man/7/credentials>
@@ -86,10 +147,13 @@ total
 + <https://linux.die.net/man/5/proc>
 + <https://linux.die.net/man/1/top>
 + <https://linux.die.net/man/1/htop>
++ <https://gitlab.com/procps-ng/procps.git>
++ <https://github.com/htop-dev/htop.git>
 
 ### `pthread_signals`
 
 * Crea N hilos y asigna un manejador para cada señal
+* Cada hilo deberá entrar en un ciclo de espera largo utilizando `sleep(UINT_MAX)`
 * Utiliza `pthread_sigmask` para establecer el manejador y atender la señal que recibe cada hilo
 
 + <https://linux.die.net/man/7/signal>
@@ -100,17 +164,35 @@ total
 
 ### `proc_pthread`
 
-Programa que lanza subprocesos con hilos y modifica la ejecución de acuerdo a la señal que reciba:
-
-* Al recibir **USR1** crea un subproceso adicional
-* Al recibir **HUP** mata uno de los subprocesos
-* Al recibir **USR2** cada subproceso crea un hilo más
-* Al recibir **INT** cada proceso finaliza uno de sus hilos
-* Al recibir **TERM** mata primero todos los hilos y después todos los subprocesos
+* Lanza subprocesos con hilos y modifica la ejecución de acuerdo a la señal que reciba:
+* Imprime la información de cuantos procesos tiene y cuantos hilos tiene cada proceso
+  - Imprimir el número de procesos hijos, así como su PID (_process id_)
+  - Cada proceso hijo imprime el número de hilos y su TID (_task id_)
+  - Al final imprime `--` para separar la salida de la siguiente ejecución
+* Funcionamiento esperado de acuerdo a la señal recibida:
+  - Al recibir `SIGUSR1` crea un subproceso adicional
+  - Al recibir `SIGHUP` mata uno de los subprocesos
+  - Al recibir `SIGUSR2` cada subproceso crea un hilo más
+  - Al recibir `SIGINT` cada proceso finaliza uno de sus hilos
+  - Al recibir `SIGTERM` mata primero todos los hilos y después todos los subprocesos y finaliza el proceso padre
 
 ### `logger`
 
-Demonio que recibe un mensaje desde varios sockets UNIX y los imprime a syslog estableciendo la _prioridad_ y el tipo (_facility_) adecuados.
+* Demonio que escucha en un socket UNIX y recibe mensajes de los clientes
+  - Escribe un mensaje en syslog con _facility_ `LOG_USER` y prioridad `LOG_INFO` al iniciar y terminar el programa
+
+* Recibe de cada cliente mensajes en el siguiente formato y los escribe a syslog con el _facility_ y nivel indicados
+  - Rechaza los mensajes que especifiquen algún _facility_ no soportado
+
+```
+<FACILITY>	<LEVEL>
+<MENSAJE>
+```
+
+| Campo    | Valores |
+|:--------:|:-------:|
+| Facility | `LOG_LOCAL0` ... `LOG_LOCAL7` |
+| Nivel    | `LOG_EMERG`, `LOG_ALERT`, `LOG_CRIT`, `LOG_ERR`, `LOG_WARNING`, `LOG_NOTICE`, `LOG_INFO` y `LOG_DEBUG` |
 
 + <https://linux.die.net/man/3/syslog>
 
@@ -134,11 +216,12 @@ Demonio que recibe un mensaje desde varios sockets UNIX y los imprime a syslog e
 ### `ps`
 
 * Lista la información de todos los procesos del sistema
+* Inspeccionar el contenido de `/proc/<pid>`
 * Este programa necesita ejecutarse como `root`
 
 + <https://git.busybox.net/busybox/tree/procps/ps.c>
 
-### `terminator`
+### `nuke`
 
 * Cuando recibe una señal la envía a todos los procesos del sistema, excepto a si mismo
 * Implementa manejo de errores y avisa cuando no pudo enviar una señal y explica por qué no se pudo
@@ -155,9 +238,11 @@ Demonio que recibe un mensaje desde varios sockets UNIX y los imprime a syslog e
 
 ### `octal-mode`
 
-* Crea todas las posibilidades de permisos en **archivos** y **directorios**, desde `000` hasta `777`
+* Crea todas las posibilidades de permisos en **archivos** y **directorios**, desde `0000` hasta `7777`
+  - Tomar en cuenta los permisos usuales para `user`, `group` y `other`
+  - El primer dígito corresponde a los bits `suid`, `sgid` y `sticky`
 * Para los **archivos** comprueba que se puedan _abrir_, _leer_, _modificar_ y _borrar_
-* Para los **directorios** comprueba que se pueda _cambiar al directorio_, _listar el contenido_, _crear_ y _borrar_ archivos
+* Para los **directorios** comprueba que se pueda _cambiar al directorio_, _listar el contenido_, así como _crear_ y _borrar_ archivos dentro de ellos
 
 + <https://linux.die.net/man/3/chdir>
 + <https://linux.die.net/man/3/chmod>
@@ -177,30 +262,56 @@ Demonio que recibe un mensaje desde varios sockets UNIX y los imprime a syslog e
 
 Lee los comandos desde la entrada estándar y los ejecuta conectando la salida estándar y el error estándar a cada proceso hijo
 
+* Lee el comando a ejecutar y sus argumentos desde `STDIN`
+* Al recibir un retorno de línea ejecuta el comando con los argumentos especificados
+* Imprime el código de salida del último comando ejecutado en el _prompt_
+* El _prompt_ debe ser el caracter `#` si el usuario es `root` o el caracter `$` en caso contrario
+* Soporta los siguientes comandos:
+  - `cd`: Cambia al directorio especificado
+  - `pwd`: Imprime la ruta del directorio actual
+  - `exit`: Termina el programa
+
+```
+$ uname -a
+Linux 0a1b2c3d4e5f 4.9.125-linuxkit #1 SMP Fri Sep 7 08:20:28 UTC 2018 x86_64 Linux
+0
+$ cat /archivo/que/no/existe
+1
+$ cd /tmp
+$ pwd
+/tmp
+$ exit
+```
+
 + <https://git.busybox.net/busybox/tree/shell>
 + <https://linux.die.net/man/2/fork>
 + <https://linux.die.net/man/3/exec>
 + <https://linux.die.net/man/3/system>
 
-### `su`
-
-* Cambia privilegios a otro usuario y ejecuta un comando con los privilegios del nuevo usuario
-* El comando puede ser especificado como argumento a este programa
-* Ejecuta el comando especificado por la _variable de entorno_ `SHELL` si no se pasaron argumentos
-
-+ <https://git.busybox.net/busybox/tree/loginutils/su.c>
-+ <https://linux.die.net/man/2/fork>
-+ <https://linux.die.net/man/3/exec>
-
 ### `hashdeep`
 
 * Calcula la _suma de verificación_ **md5** y **sha1** de un archivo utilizando procesos o hilos diferentes
-* La lista de archivos se puede pasar por **STDIN** (un archivo por línea) o como argumentos al programa
-* Realizar cada _suma de verificación_ en un hilo separado
+* La lista de archivos se puede pasar como argumentos al programa o vía **STDIN** (un archivo por línea)
+* Realizar la _suma de verificación_ de cada archivo de entrada en un proceso o hilo separado
 * Al terminar de procesar el archivo imprimir el resultado en **STDOUT** con el siguiente formato separado por `\t`
 
 ```
+$ printf "" > vacio
+
+$ ls -la vacio 
+-rw-r--r--  1 tonejito  staff  0 Dec 14 22:28 vacio
+
+$ md5sum vacio
+d41d8cd98f00b204e9800998ecf8427e  vacio
+
+$ shasum vacio
+da39a3ee5e6b4b0d3255bfef95601890afd80709  vacio
+```
+
+```
+./hashdeep vacio
 nombre	tamaño	md5	sha1
+vacio	0	d41d8cd98f00b204e9800998ecf8427e	da39a3ee5e6b4b0d3255bfef95601890afd80709
 ```
 
 + <https://linux.die.net/man/1/hashdeep>
@@ -243,7 +354,7 @@ bindadress	bindport	connectaddress	connectport
 
 * Implementa el protocolo MemCache con los comandos `set`, `get`, `delete`, `flush` y `stats`
 * Establecer un arreglo en memoria de tama
-* Soporta varios clientes por socket UNIX
+* Soporta varios clientes por socket UNIX, TCP o UDP
 
 + <https://github.com/memcached/memcached>
 + <https://github.com/memcached/memcached/blob/master/doc/protocol.txt>
