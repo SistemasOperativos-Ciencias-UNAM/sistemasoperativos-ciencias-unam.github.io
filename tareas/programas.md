@@ -2,61 +2,81 @@
 
 ## Objetivo
 
-+ Implementar de manera independiente los componentes de un demonio estándar de red UNIX
-
-## Lineamientos
-
-+ Juntar 10 puntos como mínimo
-  - La tarea se califica _sobre 10_, si se juntan mas de 10 puntos
-+ Se debe entregar mínimo 1 programa y máximo 3 por persona
-
-## Restricciones
-
-+ Fecha de entrega **Viernes 15 de enero de 2021**
-+ La tarea se entrega vía _pull request_, asignar a `@tonejito` y `@umoqnier` como revisores
-+ Esta tarea debe ser entregada **por parejas**
-+ Se debe redactar la documentación en el archivo `README.md`
-+ El repositorio debe incluir un archivo `Makefile` que compile y realice las pruebas de cada programa
-+ Para las pruebas se debe escribir un _script_ que ejecute el programa con las opciones y archivos de datos necesarios para realizar las pruebas
+- Implementar de manera independiente los componentes de un demonio estándar de red UNIX
 
 ## Requisitos
 
-+ Compilador `cc`
-+ Cabeceras estándar de GNU/Linux
+- Compilador `cc`
+- Cabeceras estándar de GNU/Linux
+
+## Lineamientos
+
+- Juntar 10 puntos como mínimo
+- Hay una [tabla](#lista-de-programas) con los puntajes asociados a cada programa
+- La tarea se califica _sobre 10_, se anotarán los puntos que junten de acuerdo a los programas que realicen
+- Hay algunos programas que se pueden implementar con procesos o con hilos, pueden hacer las dos versiones y obtener los puntos correspondientes a cada una
+
+## Restricciones
+
+- Fecha de entrega **Lunes 18 de enero de 2021**
+- Se debe redactar la documentación en el archivo `README.md`, incluir el nombre y número de cuenta de los autores
+- La implementación de los programas debe ser en lenguaje C
+- El repositorio debe incluir un archivo `Makefile` que compile y realice las pruebas de cada programa
+- Para las pruebas se debe escribir un _script_ que ejecute el programa con las opciones y archivos de datos necesarios para realizar las pruebas
+- Anotar al inicio del código fuente de los programas y demás archivos el nombre y número de cuenta de los autores:
+```
+/*
+prog - Programa que implementa X
+
+123456789 - Andrés Hernández
+098765432 - Jose Luis Torres
+*/
+```
+
+## Entrega
+
+- La entrega de los programas es de manera **individual** o en **parejas**
+  - Dar los permisos adecuados al repositorio _fork_ para que el otro integrante pueda hacer _push_ de sus cambios
+- Enviar el código fuente sin binarios ejecutables mediante _merge request_ al [repositorio de tareas](https://gitlab.com/SistemasOperativos-Ciencias-UNAM/2021-1/tareas-so.git)
+  - Asignar a @tonejito y @umoqnier como revisores del _merge request_
+- Crear una rama llamada `Programas-AAAA-BBBB` (donde `AAAA` y `BBBB` son las iniciales de los integrantes)
+- El código se entrega en la carpeta de uno de los integrantes y se debe hacer una líga simbólica en el repositorio para indicar que estan entregando los programas
+  - Detalles de esto mas adelante, pueden dejar esto hasta el final
+  - Ej. `content/entrega/AndresHernandez/tarea-programas`
 
 ## Lista de programas
 
-| puntos | nombre		|
-|:------:|:--------------------:|
-| 1 	 | `reader`		|
-| 1	 | `signals`		|	3
-| 2	 | `ps_pthread_props`	|
-| 2	 | `pthread_signals`	|
-| 2	 | `proc_pthread`	|	2
-| 3	 | `logger`		|	2
-| 3	 | `logrotate`		|
-| 4 	 | `lsof`		|
-| 4	 | `ps`			|
-| 4	 | `nuke`		|
-| 4	 | `octal-mode`		|
-| 4	 | `shell`		|
-| 4	 | `su`			|
-| 4	 | `hashdeep`		|
-| 4	 | `rainbow`		|
-| 6	 | `rinetd`		|
-| 6	 | `nmap`		|
-| 8	 | `memcached`		|
-| 8	 | `nsca_httpd`		|
-| 10	 | `backdoor`		|
+| Puntos | Nombre				| Procesos	| Hilos	|
+|:------:|:------------------------------------:|:-------------:|:-----:|
+| 1 	 | [`reader`][#reader]			| ✔		| ✔	|
+| 2 	 | [`ps_pthread_props`][#ps_pthread_props]	| ⭕		| 	|
+| 2	 | [`proc_pthread`][#proc_pthread]	| ⭕		| ⭕	|
+| 2	 | [`logger`][#logger]			| ✔		| ✔	|
+| 4	 | [`syslog`][#syslog]			| ✔		| ✔	|
+| 3	 | [`signals`][#signals]		| ✔		| 	|
+| 3 	 | [`lsof`][#lsof]			| ⭕		| 	|
+| 4	 | [`ps`][#ps]				| ⭕		| 	|
+| 4	 | [`nuke`][#nuke]			| ⭕		| 	|
+| 4	 | [`octal-mode`][#octal-mode]		| ⭕		| 	|
+| 4	 | [`shell`][#shell]			| ⭕		| 	|
+| 4	 | [`hashdeep`][#hashdeep]		| ✔		| ✔	|
+| 4	 | [`rainbow`][#rainbow]		| ✔		| ✔	|
+| 6	 | [`rinetd`][#rinetd]			| ✔		| ✔	|
+| 6	 | [`nmap`][#nmap]			| ✔		| ✔	|
+| 8	 | [`memcached`][#memcached]		| ✔		| ✔	|
+| 8	 | [`nsca_httpd`][#nsca_httpd]		| ✔		| ✔	|
+| 10	 | [`backdoor`][#backdoor]		| ✔		| ✔	|
 
-## Descripción
+--------------------------------------------------------------------------------
+
+## Descripción de los programas
 
 ### `reader`
 
 * Lee los archivos de entrada especificados por los argumentos uno en cada subproceso o hilo
  - Lee desde `STDIN` si no se especifica un archivo de entrada
 * Muestra al final cuantas veces aparece cada vocal en cada archivo y cuántos caracteres fueron leídos por todos los subprocesos e hilos en total
- - Debe tomar en cuenta las vocales mayúsculas y minúsculas con y sin acentos y la letra U con diéresis:
+ - Debe tomar en cuenta las vocales _mayúsculas_ y _minúsculas_ con y sin _acentos_ y la letra U con _diéresis_:
  - `aeiou`, `AEIOU`, `áéíóú`, `ÁÉÍÓÚ`, `üÜ`
  - Considerar únicamente los caracteres de la tabla ASCII, donde cada uno es representado por exactamente 1 byte
 
@@ -81,7 +101,7 @@ $ cat dieresis.txt
 
 ##### Ejemplo
 
-Leyendo desde STDIN
++ Leyendo desde `STDIN`:
 
 ```
 $ ./reader < vocales.txt
@@ -90,7 +110,7 @@ numero:	2	2	2	2	2
 total:	10
 ```
 
-Leyendo desde 3 archivos
++ Leyendo desde 3 archivos:
 
 ```
 $ ./reader  vocales.txt  acentos.txt  dieresis.txt
@@ -105,13 +125,102 @@ total:	22
 + <https://linux.die.net/man/1/wc>
 + <https://www.gnu.org/software/parallel/>
 
+--------------------------------------------------------------------------------
+
+### `ps_pthread_props`
+
+* Imprime todas las propiedades de un **proceso** y de todos sus **hilos**
+* Interpretar la información presente en `/proc/<pid>` y `/proc/<pid>/task/<tid>`
+* Averiguar cómo se pueden obtener las métricas y estadísticas que generan `top(1)` y `htop(1)`
+
++ <https://linux.die.net/man/7/credentials>
++ <https://linux.die.net/man/7/pthreads>
++ <https://linux.die.net/man/5/proc>
++ <https://linux.die.net/man/1/top>
++ <https://linux.die.net/man/1/htop>
++ <https://gitlab.com/procps-ng/procps.git>
++ <https://github.com/htop-dev/htop.git>
+
+--------------------------------------------------------------------------------
+
+### `proc_pthread`
+
+* Lanza subprocesos con hilos y modifica la ejecución de acuerdo a la señal que reciba:
+* Imprime la información de cuantos procesos tiene y cuantos hilos tiene cada proceso
+  - Imprimir el número de procesos hijos, así como su PID (_process id_)
+  - Cada proceso hijo imprime el número de hilos y su TID (_task id_)
+  - Al final imprime `--` para separar la salida de la siguiente ejecución
+* Establecer una función de trabajo
+* Funcionamiento esperado de acuerdo a la señal recibida:
+
+| Señal     | Acción |
+|:---------:|:------:|
+| `SIGUSR1` | Crea un subproceso adicional |
+| `SIGHUP`  | Mata uno de los subprocesos |
+| `SIGUSR2` | Cada subproceso crea un hilo más |
+| `SIGINT`  | Cada proceso finaliza uno de sus hilos |
+| `SIGTERM` | Mata primero todos los hilos y después todos los subprocesos y finaliza el proceso padre |
+
+--------------------------------------------------------------------------------
+
+### `logger`
+
+* Demonio que escucha en un socket UNIX y recibe mensajes de los clientes
+  - Atiende a los clientes utilizando procesos o hilos
+  - Escribe un mensaje en syslog con _facility_ `LOG_USER` y prioridad `LOG_INFO` al iniciar y terminar el programa
+
+* Recibe de cada cliente mensajes en el siguiente formato y los escribe a syslog con el _facility_ y nivel indicados
+
+```
+<FACILITY>	<LEVEL>
+<MENSAJE>
+```
+
+* Rechaza los mensajes que especifiquen algún _facility_ no soportado
+
+| Campo      | Valores |
+|:----------:|:-------:|
+| _Facility_ | `LOG_LOCAL0` ... `LOG_LOCAL7` |
+| Nivel      | `LOG_EMERG`, `LOG_ALERT`, `LOG_CRIT`, `LOG_ERR`, `LOG_WARNING`, `LOG_NOTICE`, `LOG_INFO` y `LOG_DEBUG` |
+
++ <https://linux.die.net/man/3/syslog>
+
+--------------------------------------------------------------------------------
+
+### `syslog`
+
+* Demonio que escucha en el socket UNIX `/dev/log` y en el puerto `514` de TCP y UDP por **IPv4** e **IPv6**
+* Atiende a los clientes utilizando procesos o hilos
+* Implementar mecanismos de sincronización para evitar condiciones de carrera e interbloqueos
+* Escucha los mensajes del protocolo syslog
+  - Ignorar los campos de _prioridad_ y _facility_
+* Establecer un _buffer circular_ en memoria de tamaño configurable en MB
+* Escribir los mensajes de la bitácora en el _buffer circular_ y en el archivo de texto `/var/log/syslog` con el siguiente formato separado por `\t`:
+```
+fecha-hora	hostname	proceso [pid]	mensaje
+```
+  - **fecha-hora**: `YYYY-MM-DD HH:MM:SS`
+  - **hostname**: formato corto, primer campo antes del punto (`hostname -s`)
+  - **proceso** y **pid** que enviaron el mensaje de bitácora
+  - **mensaje** de bitácora
+* Al recibir alguna señal `HUP`, `INT` o `TERM` escribe el contenido del _buffer circular_ en el archivo `/tmp/syslog` y sale del programa
+
++ <https://tools.ietf.org/html/rfc5424>
++ <https://linux.die.net/man/8/syslogd>
++ <https://en.wikipedia.org/wiki/Syslog>
++ <https://www.paessler.com/it-explained/syslog>
++ <https://stackify.com/syslog-101/>
++ <https://www.dnsstuff.com/what-is-syslog>
+
+--------------------------------------------------------------------------------
+
 ### `signals`
 
 * Lanza N procesos hijo y envía una señal diferente a cada uno
-  - Esperar 1 segundo al enviar las señales a cada proceso hijo
+  - Espera `1` segundo al enviar las señales a cada proceso hijo
   - Cuando el proceso padre reciba la señal `SIGHUP`, debe enviar la señal `SIGTERM` a **todos** los procesos hijo y crearlos de nuevo
   - Cuando el proceso padre reciba la señal `SIGINT`, debe enviar la señal `SIGTERM` a **todos** los procesos hijo y salir
-  - Cuando el proceso padre termine de crear los procesos hijos, debe esperar un minuto antes de enviar la señal `SIGTERM` a **todos** los procesos hijo y salir
+  - Cuando el proceso padre termine de crear los procesos hijos, debe esperar `60` segundos antes de enviar la señal `SIGTERM` a **todos** los procesos hijo y salir
 
 * Cada proceso hijo deberá entrar en un ciclo de espera largo utilizando `sleep(UINT_MAX)`
 
@@ -133,76 +242,10 @@ total:	22
 + <https://linux.die.net/man/3/kill>
 + <https://linux.die.net/man/3/sleep>
 + <https://linux.die.net/man/3/syslog>
-+ [`signal/Linux.txt`](https://gitlab.com/SistemasOperativos-Ciencias-UNAM/sistemasoperativos-ciencias-unam.gitlab.io/-/tree/master/temas/signal/Linux.txt)
-+ [`signal/macOS.txt`](https://gitlab.com/SistemasOperativos-Ciencias-UNAM/sistemasoperativos-ciencias-unam.gitlab.io/-/tree/master/temas/signal/macOS.txt)
++ [`signal/Linux.txt`](../temas/signal/Linux.txt)
++ [`signal/macOS.txt`](../temas/signal/macOS.txt)
 
-### `ps_pthread_props`
-
-* Imprime todas las propiedades de un **proceso** y de todos sus **hilos**
-* Interpretar la información presente en `/proc/<pid>` y `/proc/<pid>/task/<tid>`
-* Averiguar cómo se pueden obtener las métricas y estadísticas que generan `top(1)` y `htop(1)`
-
-+ <https://linux.die.net/man/7/credentials>
-+ <https://linux.die.net/man/7/pthreads>
-+ <https://linux.die.net/man/5/proc>
-+ <https://linux.die.net/man/1/top>
-+ <https://linux.die.net/man/1/htop>
-+ <https://gitlab.com/procps-ng/procps.git>
-+ <https://github.com/htop-dev/htop.git>
-
-### `pthread_signals`
-
-* Crea N hilos y asigna un manejador para cada señal
-* Cada hilo deberá entrar en un ciclo de espera largo utilizando `sleep(UINT_MAX)`
-* Utiliza `pthread_sigmask` para establecer el manejador y atender la señal que recibe cada hilo
-
-+ <https://linux.die.net/man/7/signal>
-+ <https://linux.die.net/man/3/pthread_sigmask>
-+ <https://linux.die.net/man/2/sigprocmask>
-+ <https://linux.die.net/man/3/kill>
-+ <https://linux.die.net/man/3/pthread_kill>
-
-### `proc_pthread`
-
-* Lanza subprocesos con hilos y modifica la ejecución de acuerdo a la señal que reciba:
-* Imprime la información de cuantos procesos tiene y cuantos hilos tiene cada proceso
-  - Imprimir el número de procesos hijos, así como su PID (_process id_)
-  - Cada proceso hijo imprime el número de hilos y su TID (_task id_)
-  - Al final imprime `--` para separar la salida de la siguiente ejecución
-* Funcionamiento esperado de acuerdo a la señal recibida:
-  - Al recibir `SIGUSR1` crea un subproceso adicional
-  - Al recibir `SIGHUP` mata uno de los subprocesos
-  - Al recibir `SIGUSR2` cada subproceso crea un hilo más
-  - Al recibir `SIGINT` cada proceso finaliza uno de sus hilos
-  - Al recibir `SIGTERM` mata primero todos los hilos y después todos los subprocesos y finaliza el proceso padre
-
-### `logger`
-
-* Demonio que escucha en un socket UNIX y recibe mensajes de los clientes
-  - Escribe un mensaje en syslog con _facility_ `LOG_USER` y prioridad `LOG_INFO` al iniciar y terminar el programa
-
-* Recibe de cada cliente mensajes en el siguiente formato y los escribe a syslog con el _facility_ y nivel indicados
-  - Rechaza los mensajes que especifiquen algún _facility_ no soportado
-
-```
-<FACILITY>	<LEVEL>
-<MENSAJE>
-```
-
-| Campo    | Valores |
-|:--------:|:-------:|
-| Facility | `LOG_LOCAL0` ... `LOG_LOCAL7` |
-| Nivel    | `LOG_EMERG`, `LOG_ALERT`, `LOG_CRIT`, `LOG_ERR`, `LOG_WARNING`, `LOG_NOTICE`, `LOG_INFO` y `LOG_DEBUG` |
-
-+ <https://linux.die.net/man/3/syslog>
-
-### `logrotate`
-
-* Lee desde un `fifo` y guarda en memoria el contenido
-* Escribe en un archivo cuando recibe la señal **USR1**
-* _Rota_ el archivo al recibir la señal **HUP**
-
-+ <https://linux.die.net/man/8/logrotate>
+--------------------------------------------------------------------------------
 
 ### `lsof`
 
@@ -213,6 +256,8 @@ total:	22
 + <https://linux.die.net/man/8/lsof>
 + <https://git.busybox.net/busybox/tree/procps/lsof.c>
 
+--------------------------------------------------------------------------------
+
 ### `ps`
 
 * Lista la información de todos los procesos del sistema
@@ -221,20 +266,23 @@ total:	22
 
 + <https://git.busybox.net/busybox/tree/procps/ps.c>
 
+--------------------------------------------------------------------------------
+
 ### `nuke`
 
-* Cuando recibe una señal la envía a todos los procesos del sistema, excepto a si mismo
+* Cuando recibe una señal la envía a todos los procesos del sistema, excepto a si mismo y a toda la jerarquía de procesos padre hasta `init`
 * Implementa manejo de errores y avisa cuando no pudo enviar una señal y explica por qué no se pudo
 
 + <https://linux.die.net/man/3/kill>
 + <https://linux.die.net/man/3/errno>
 + <https://linux.die.net/man/3/explain>
 + <https://linux.die.net/man/3/explain_kill>
-
 + <https://linux.die.net/man/2/fork>
 + <https://linux.die.net/man/7/pthreads>
 + <https://linux.die.net/man/3/kill>
 + <https://linux.die.net/man/3/pthread_kill>
+
+--------------------------------------------------------------------------------
 
 ### `octal-mode`
 
@@ -257,6 +305,8 @@ total:	22
 + <https://en.wikipedia.org/wiki/File_system_permissions#Notation_of_traditional_Unix_permissions>
 + <http://permissions-calculator.org/>
 + <https://www.tutorialspoint.com/unix/unix-file-permission.htm>
+
+--------------------------------------------------------------------------------
 
 ### `shell`
 
@@ -288,12 +338,14 @@ $ exit
 + <https://linux.die.net/man/3/exec>
 + <https://linux.die.net/man/3/system>
 
+--------------------------------------------------------------------------------
+
 ### `hashdeep`
 
 * Calcula la _suma de verificación_ **md5** y **sha1** de un archivo utilizando procesos o hilos diferentes
-* La lista de archivos se puede pasar como argumentos al programa o vía **STDIN** (un archivo por línea)
+* La lista de archivos se puede pasar como argumentos al programa o vía `STDIN` (un archivo por línea)
 * Realizar la _suma de verificación_ de cada archivo de entrada en un proceso o hilo separado
-* Al terminar de procesar el archivo imprimir el resultado en **STDOUT** con el siguiente formato separado por `\t`
+* Al terminar de procesar el archivo imprimir el resultado en `STDOUT` con el siguiente formato separado por `\t`
 
 ```
 $ printf "" > vacio
@@ -321,18 +373,25 @@ vacio	0	d41d8cd98f00b204e9800998ecf8427e	da39a3ee5e6b4b0d3255bfef95601890afd8070
 + <https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/crypto/md5.c>
 + <https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/crypto/sha1_generic.c>
 
+--------------------------------------------------------------------------------
+
 ### `rainbow`
 
-* Demonio que recibe una cadena desde **STDIN** y la guarda en memoria junto con su _hash_ **md5** y **sha1**
-* Al recibir **HUP** imprime el contenido de la memoria en **STDOUT**
-* Al recibir **INT** guarda el contenido de la memoria en un archivo separado por `\t`
+* Demonio que recibe una cadena desde `STDIN` y la guarda en memoria junto con su _hash_ **md5** y **sha1**
+* Atiende a los clientes utilizando procesos o hilos
+* Al recibir la señal `HUP` imprime el contenido de la memoria en `STDOUT`
+* Al recibir la señal `INT` guarda el contenido de la memoria en un archivo separado por `\t`
 * Al iniciar carga el contenido de este archivo en memoria si es que existe
+* Implementar mecanismos de sincronización para evitar condiciones de carrera e interbloqueos
 
 + <https://en.m.wikipedia.org/wiki/Rainbow_table>
 
+--------------------------------------------------------------------------------
+
 ### `rinetd`
 
-* Escucha conexiones **TCP** en `bindaddress`:`bindport`
+* Demonio que escucha conexiones **TCP** en `bindaddress`:`bindport`
+* Atiende a los clientes utilizando procesos o hilos
 * Cada conexión que recibe es redireccionada a `connectaddress`:`connectport`
 * Lee su configuración desde un archivo separado por `\t`
 
@@ -342,62 +401,77 @@ bindadress	bindport	connectaddress	connectport
 
 + <https://manpages.debian.org/stretch/rinetd/rinetd.8.en.html>
 
+--------------------------------------------------------------------------------
+
 ### `nmap`
 
-* Crea N hilos y cada hilo verifica que se pueda conectar a un puerto TCP del host de destino
-* Al final muestra un resumen de los puertos que incluye el nombre y número de puerto
+* Crea N procesos o hilos y cada uno verifica que se pueda conectar a un puerto TCP del host de destino
+* El rango o lista de puertos se pasan por línea de comandos
+* El último argumento es el host a escanear, ya sea como dirección IPv4, IPv6 o nombre DNS
+* Al final muestra un resumen de los puertos que incluye el nombre y número de puerto, utilizar `/etc/services`
 
 + <https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Well-known_ports>
 + <https://linux.die.net/man/3/getservent>
 
+--------------------------------------------------------------------------------
+
 ### `memcached`
 
-* Implementa el protocolo MemCache con los comandos `set`, `get`, `delete`, `flush` y `stats`
-* Establecer un arreglo en memoria de tama
-* Soporta varios clientes por socket UNIX, TCP o UDP
+* Demonio que implementa el protocolo MemCache con los comandos `set`, `get`, `delete`, `flush` y `stats`
+* Soporta varios clientes por socket UNIX, TCP o UDP y los atiende utilizando procesos o hilos
+* Establecer un arreglo en memoria de tamaño configurable en KB y agregar dos instrucciones:
+  - `save`: para guardar el estado del arreglo de memoria a disco
+  - `load`: para cargar el estado del arreglo de memoria desde disco
+* Implementar mecanismos de sincronización para evitar condiciones de carrera e interbloqueos
 
 + <https://github.com/memcached/memcached>
 + <https://github.com/memcached/memcached/blob/master/doc/protocol.txt>
 + <https://github.com/memcached/memcached/blob/master/doc/threads.txt>
 
+--------------------------------------------------------------------------------
+
 ### `nsca_httpd`
 
-* Servidor web que implementa el método GET y los códigos de estado 200, 403, 404 y 500
+* Servidor web que implementa los métodos `GET` y `HEAD`, así como los códigos de estado `200`, `403`, `404` y `500`
 * El directorio raíz del servidor es pasado como primer argumento al programa o como la variable de entorno `DocumentRoot`
-* Imprime la bitácora de acceso a STDOUT y la bitácora de errores a STDERR
-* Atiende a los clientes con hilos
+* Imprime la bitácora de acceso a `STDOUT` y la bitácora de errores a `STDERR`
+* Atiende a los clientes utilizando procesos o hilos
 
 + <https://en.wikipedia.org/wiki/List_of_HTTP_status_codes>
 + <https://en.wikipedia.org/wiki/List_of_HTTP_header_fields>
 + <https://en.wikipedia.org/wiki/Common_Log_Format>
 + <https://httpd.apache.org/docs/2.4/logs.html>
 
+--------------------------------------------------------------------------------
+
 ### `backdoor`
 
-Para tener todos los puntos de este programa implementar los 3 componentes (servidor, local y remoto)
+Para tener todos los puntos de este programa implementar los 3 componentes (`servidor`, `local` y `remoto`)
 
 #### Programa **servidor**
 
 * El programa **servidor** escucha conexiones por TCP y socket UNIX
-* Conecta internamente el socket del primer cliente TCP con el primer cliente UNIX
+* Conecta internamente el socket del _primer cliente TCP_ con el _primer cliente UNIX_
 * Las conexiones pueden ser atendidas por procesos o hilos
 
 #### Programa **local**
 
 * El programa **local** se conecta al servidor via socket UNIX
 * Este programa _envía_ comandos al programa **remoto**
-* Conecta **STDIN** a la parte del socket que envía
-* Conecta **STDOUT** y **STDERR** a la parte del socket que recibe
+* Conecta `STDIN` a la parte del socket que envía
+* Conecta `STDOUT` y `STDERR` a la parte del socket que recibe
 
 #### Programa **remoto**
 
 * El programa **remoto** se conecta al servidor via TCP
 * Este programa _recibe_ comandos desde el programa **local**
-* Conecta **STDIN** a la parte del socket que recibe
-* Conecta **STDOUT** y **STDERR** a la parte del socket que envía
+* Conecta `STDIN` a la parte del socket que recibe
+* Conecta `STDOUT` y `STDERR` a la parte del socket que envía
 * Al establecer una conexión ejecuta el programa especificado por la _variable de entorno_ `SHELL`
 
 + <https://linux.die.net/man/3/socket>
 + <https://linux.die.net/man/3/bind>
 + <https://linux.die.net/man/3/listen>
 + <https://linux.die.net/man/3/accept>
+
+--------------------------------------------------------------------------------
