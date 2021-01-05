@@ -48,24 +48,24 @@ prog - Programa que implementa X
 
 | Puntos | Nombre				| Procesos	| Hilos	|
 |:------:|:------------------------------------:|:-------------:|:-----:|
-| 1 	 | [`reader`][#reader]			| ✔		| ✔	|
-| 2 	 | [`ps_pthread_props`][#ps_pthread_props]	| ⭕		| 	|
-| 2	 | [`proc_pthread`][#proc_pthread]	| ⭕		| ⭕	|
-| 2	 | [`logger`][#logger]			| ✔		| ✔	|
-| 4	 | [`syslog`][#syslog]			| ✔		| ✔	|
-| 3	 | [`signals`][#signals]		| ✔		| 	|
-| 3 	 | [`lsof`][#lsof]			| ⭕		| 	|
-| 4	 | [`ps`][#ps]				| ⭕		| 	|
-| 4	 | [`nuke`][#nuke]			| ⭕		| 	|
-| 4	 | [`octal-mode`][#octal-mode]		| ⭕		| 	|
-| 4	 | [`shell`][#shell]			| ⭕		| 	|
-| 4	 | [`hashdeep`][#hashdeep]		| ✔		| ✔	|
-| 4	 | [`rainbow`][#rainbow]		| ✔		| ✔	|
-| 6	 | [`rinetd`][#rinetd]			| ✔		| ✔	|
-| 6	 | [`nmap`][#nmap]			| ✔		| ✔	|
-| 8	 | [`memcached`][#memcached]		| ✔		| ✔	|
-| 8	 | [`nsca_httpd`][#nsca_httpd]		| ✔		| ✔	|
-| 10	 | [`backdoor`][#backdoor]		| ✔		| ✔	|
+| 1 	 | [`reader`](#reader)			| ✔		| ✔	|
+| 2 	 | [`ps_pthread_props`](#ps_pthread_props)	| ⭕		| 	|
+| 2	 | [`proc_pthread`](#proc_pthread)	| ⭕		| ⭕	|
+| 2	 | [`logger`](#logger)			| ✔		| ✔	|
+| 4	 | [`syslog`](#syslog)			| ✔		| ✔	|
+| 3	 | [`signals`](#signals)		| ✔		| 	|
+| 3 	 | [`lsof`](#lsof)			| ⭕		| 	|
+| 4	 | [`ps`](#ps)				| ⭕		| 	|
+| 4	 | [`nuke`](#nuke)			| ⭕		| 	|
+| 4	 | [`octal-mode`](#octal-mode)		| ⭕		| 	|
+| 4	 | [`shell`](#shell)			| ⭕		| 	|
+| 4	 | [`hashdeep`](#hashdeep)		| ✔		| ✔	|
+| 4	 | [`rainbow`](#rainbow)		| ✔		| ✔	|
+| 6	 | [`rinetd`](#rinetd)			| ✔		| ✔	|
+| 6	 | [`nmap`](#nmap)			| ✔		| ✔	|
+| 8	 | [`memcached`](#memcached)		| ✔		| ✔	|
+| 8	 | [`nsca_httpd`](#nsca_httpd)		| ✔		| ✔	|
+| 10	 | [`backdoor`](#backdoor)		| ✔		| ✔	|
 
 --------------------------------------------------------------------------------
 
