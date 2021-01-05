@@ -17,4 +17,4 @@ all:
 	${TIDY} -quiet -indent -wrap 0 -utf8 -modify public/$@ || true
 
 clean:	${DST}
-	if [ -e ${DST} ] ; then ${RM} -v ${DST} ; fi ;
+	-${RM} -v ${DST}
