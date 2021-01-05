@@ -51,10 +51,10 @@ prog - Programa que implementa X
 | 1 	 | [`reader`](#reader)			| ✔		| ✔	|
 | 2 	 | [`ps_pthread_props`](#ps_pthread_props)	| ⭕		| 	|
 | 2	 | [`proc_pthread`](#proc_pthread)	| ⭕		| ⭕	|
-| 2	 | [`logger`](#logger)			| ✔		| ✔	|
-| 4	 | [`syslog`](#syslog)			| ✔		| ✔	|
 | 3	 | [`signals`](#signals)		| ✔		| 	|
 | 3 	 | [`lsof`](#lsof)			| ⭕		| 	|
+| 3	 | [`logger`](#logger)			| ✔		| ✔	|
+| 4	 | [`syslog`](#syslog)			| ✔		| ✔	|
 | 4	 | [`ps`](#ps)				| ⭕		| 	|
 | 4	 | [`nuke`](#nuke)			| ⭕		| 	|
 | 4	 | [`octal-mode`](#octal-mode)		| ⭕		| 	|
@@ -163,57 +163,6 @@ total:	22
 
 --------------------------------------------------------------------------------
 
-### `logger`
-
-* Demonio que escucha en un socket UNIX y recibe mensajes de los clientes
-  - Atiende a los clientes utilizando procesos o hilos
-  - Escribe un mensaje en syslog con _facility_ `LOG_USER` y prioridad `LOG_INFO` al iniciar y terminar el programa
-
-* Recibe de cada cliente mensajes en el siguiente formato y los escribe a syslog con el _facility_ y nivel indicados
-
-```
-<FACILITY>	<LEVEL>
-<MENSAJE>
-```
-
-* Rechaza los mensajes que especifiquen algún _facility_ no soportado
-
-| Campo      | Valores |
-|:----------:|:-------:|
-| _Facility_ | `LOG_LOCAL0` ... `LOG_LOCAL7` |
-| Nivel      | `LOG_EMERG`, `LOG_ALERT`, `LOG_CRIT`, `LOG_ERR`, `LOG_WARNING`, `LOG_NOTICE`, `LOG_INFO` y `LOG_DEBUG` |
-
-+ <https://linux.die.net/man/3/syslog>
-
---------------------------------------------------------------------------------
-
-### `syslog`
-
-* Demonio que escucha en el socket UNIX `/dev/log` y en el puerto `514` de TCP y UDP por **IPv4** e **IPv6**
-* Atiende a los clientes utilizando procesos o hilos
-* Implementar mecanismos de sincronización para evitar condiciones de carrera e interbloqueos
-* Escucha los mensajes del protocolo syslog
-  - Ignorar los campos de _prioridad_ y _facility_
-* Establecer un _buffer circular_ en memoria de tamaño configurable en MB
-* Escribir los mensajes de la bitácora en el _buffer circular_ y en el archivo de texto `/var/log/syslog` con el siguiente formato separado por `\t`:
-```
-fecha-hora	hostname	proceso [pid]	mensaje
-```
-  - **fecha-hora**: `YYYY-MM-DD HH:MM:SS`
-  - **hostname**: formato corto, primer campo antes del punto (`hostname -s`)
-  - **proceso** y **pid** que enviaron el mensaje de bitácora
-  - **mensaje** de bitácora
-* Al recibir alguna señal `HUP`, `INT` o `TERM` escribe el contenido del _buffer circular_ en el archivo `/tmp/syslog` y sale del programa
-
-+ <https://tools.ietf.org/html/rfc5424>
-+ <https://linux.die.net/man/8/syslogd>
-+ <https://en.wikipedia.org/wiki/Syslog>
-+ <https://www.paessler.com/it-explained/syslog>
-+ <https://stackify.com/syslog-101/>
-+ <https://www.dnsstuff.com/what-is-syslog>
-
---------------------------------------------------------------------------------
-
 ### `signals`
 
 * Lanza N procesos hijo y envía una señal diferente a cada uno
@@ -255,6 +204,57 @@ fecha-hora	hostname	proceso [pid]	mensaje
 
 + <https://linux.die.net/man/8/lsof>
 + <https://git.busybox.net/busybox/tree/procps/lsof.c>
+
+--------------------------------------------------------------------------------
+
+### `logger`
+
+* Demonio que escucha en un socket UNIX y recibe mensajes de los clientes
+  - Atiende a los clientes utilizando procesos o hilos
+  - Escribe un mensaje en **syslog** con _facility_ `LOG_USER` y prioridad `LOG_INFO` al iniciar y terminar el programa
+
+* Recibe de cada cliente mensajes en el siguiente formato y los escribe a **syslog** con el _facility_ y nivel indicados:
+
+```
+<FACILITY>	<LEVEL>
+<MENSAJE>
+```
+
+* Rechaza los mensajes que especifiquen algún _facility_ no soportado
+
+| Campo      | Valores |
+|:----------:|:-------:|
+| _Facility_ | `LOG_LOCAL0` ... `LOG_LOCAL7` |
+| Nivel      | `LOG_EMERG`, `LOG_ALERT`, `LOG_CRIT`, `LOG_ERR`, `LOG_WARNING`, `LOG_NOTICE`, `LOG_INFO` y `LOG_DEBUG` |
+
++ <https://linux.die.net/man/3/syslog>
+
+--------------------------------------------------------------------------------
+
+### `syslog`
+
+* Demonio que escucha en el socket UNIX `/dev/log` y en el puerto `514` de TCP y UDP por **IPv4** e **IPv6**
+* Atiende a los clientes utilizando procesos o hilos
+* Implementar mecanismos de sincronización para evitar condiciones de carrera e interbloqueos
+* Escucha los mensajes del protocolo syslog
+  - Ignorar los campos de _prioridad_ y _facility_
+* Establecer un _buffer circular_ en memoria de tamaño configurable en MB
+* Escribir los mensajes de la bitácora en el _buffer circular_ y en el archivo de texto `/var/log/syslog` con el siguiente formato separado por `\t`:
+```
+fecha-hora	hostname	proceso [pid]	mensaje
+```
+  - **fecha-hora**: `YYYY-MM-DD HH:MM:SS`
+  - **hostname**: formato corto, primer campo antes del punto (`hostname -s`)
+  - **proceso** y **pid** que enviaron el mensaje de bitácora
+  - **mensaje** de bitácora
+* Al recibir alguna señal `HUP`, `INT` o `TERM` escribe el contenido del _buffer circular_ en el archivo `/tmp/syslog` y sale del programa
+
++ <https://tools.ietf.org/html/rfc5424>
++ <https://linux.die.net/man/8/syslogd>
++ <https://en.wikipedia.org/wiki/Syslog>
++ <https://www.paessler.com/it-explained/syslog>
++ <https://stackify.com/syslog-101/>
++ <https://www.dnsstuff.com/what-is-syslog>
 
 --------------------------------------------------------------------------------
 
