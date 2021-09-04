@@ -1,20 +1,18 @@
+#!/usr/bin/make -f
 SHELL=/bin/bash
 
-RM=rm
-TIDY=tidy
-PANDOC=pandoc
+MKDOCS=mkdocs
 
-TITLE=Sistemas Operativos - Facultad de Ciencias - UNAM
-NAME=index
-SRC=${NAME}.md
-DST=public/${NAME}.html
+default:	test
+test:	serve
 
-all:
-	$(MAKE) practica-pthreads.html
+install:
+	which ${MKDOCS} || \
+	pip3 install --user --requirement requirements.txt
 
-%.html: %.md
-	${PANDOC} -f Markdown -t html5 --self-contained -T "${TITLE}" -i $< -o public/$@
-	${TIDY} -quiet -indent -wrap 0 -utf8 -modify public/$@ || true
+build:	install
+	${MKDOCS} $@ --strict --verbose 2>&1 | \
+	grep -v '^DEBUG'
 
-clean:	${DST}
-	-${RM} -v ${DST}
+serve:	install
+	${MKDOCS} $@ --strict
