@@ -1,6 +1,6 @@
 # Arquitectura y componentes de una computadora
 
-* Revisar la [guía rápida de `git`](../git.md "man 1 git") para recordar como se mandan los cambios a un repositorio.
+* Revisar la [guía rápida de `git`](../../temas/git.md "man 1 git") para recordar como se mandan los cambios a un repositorio.
 
 ## Objetivo
 
@@ -158,7 +158,7 @@ repositorio/
 + `# smartctl --all /dev/sda`
 + `# smartctl --xall /dev/sda`
 
-[guia-git]: ../git.md "Guía rápida de git"
+[guia-git]: ../../temas/git.md "Guía rápida de git"
 [unetbootin]: https://unetbootin.github.io/ "UNetbootin: LiveUSB creator"
 [debian-live-info]: https://www.debian.org/CD/live/ "Debian LiveDVD"
 [ubuntu-live-info]: https://tutorials.ubuntu.com/tutorial/try-ubuntu-before-you-install "Ubuntu LiveUSB"
