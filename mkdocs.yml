@@ -3,5 +3,7 @@ site_name: Sistemas Operativos - Facultad de Ciencias - UNAM
 site_url: https://SistemasOperativos-Ciencias-UNAM.gitlab.io
 site_dir: public
 docs_dir: docs
-theme: readthedocs
 # theme: mkdocs
+theme:
+  name: readthedocs
+  locale: es
