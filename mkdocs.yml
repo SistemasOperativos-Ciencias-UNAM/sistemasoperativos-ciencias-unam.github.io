@@ -9,6 +9,16 @@ copyright: CC-BY-SA-4.0
 site_url: https://SistemasOperativos-Ciencias-UNAM.gitlab.io
 site_dir: public
 docs_dir: docs
+
+# https://www.mkdocs.org/user-guide/choosing-your-theme/
 theme:
-  name: readthedocs
+  name: mkdocs
+  # name: readthedocs
   locale: es
+  collapse_navigation: true
+  titles_only: true
+
+markdown_extensions:
+- toc:
+    permalink: true
+    separator: "-"
