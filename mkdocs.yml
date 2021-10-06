@@ -1,9 +1,14 @@
 # https://www.mkdocs.org/user-guide/configuration/
-site_name: Sistemas Operativos - Facultad de Ciencias - UNAM
+repo_name: sistemasoperativos-ciencias-unam.gitlab.io
+repo_url: https://gitlab.com/SistemasOperativos-Ciencias-UNAM/sistemasoperativos-ciencias-unam.gitlab.io
+edit_uri: -/tree/master/docs
+
+site_name: Sistemas Operativos
+site_description: Facultad de Ciencias - UNAM
+copyright: CC-BY-SA-4.0
 site_url: https://SistemasOperativos-Ciencias-UNAM.gitlab.io
 site_dir: public
 docs_dir: docs
-# theme: mkdocs
 theme:
   name: readthedocs
   locale: es
