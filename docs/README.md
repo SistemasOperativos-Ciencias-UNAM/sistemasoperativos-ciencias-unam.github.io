@@ -16,7 +16,7 @@ Semestre 2022-1
 
 ## Flujo de trabajo
 
-- [Guía rápida de `git`](temas/git.md "9418/tcp")
+- [Guía rápida de `git`](temas/git/ "9418/tcp")
 
 - [Flujo de trabajo para la entrega de tareas y prácticas][flujo-de-trabajo]
 
