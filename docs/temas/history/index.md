@@ -5,13 +5,13 @@
 - <https://en.wikipedia.org/wiki/Unix>
 - <https://www.graphviz.org/Gallery/directed/unix.html>
 
-![https://en.wikipedia.org/wiki/Unix](../img/Unix_history-simple.svg)
+![https://en.wikipedia.org/wiki/Unix](../../img/Unix_history-simple.svg)
 
 ## Linux
 
 - <https://en.wikipedia.org/wiki/List_of_Linux_distributions>
 
-![https://en.wikipedia.org/wiki/List_of_Linux_distributions](../img/Linux_Distribution_Timeline.svg)
+![https://en.wikipedia.org/wiki/List_of_Linux_distributions](../../img/Linux_Distribution_Timeline.svg)
 
 --------------------------------------------------------------------------------
 

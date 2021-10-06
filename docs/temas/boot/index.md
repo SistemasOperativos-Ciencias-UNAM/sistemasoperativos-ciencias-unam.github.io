@@ -2,7 +2,7 @@
 
 # x86 y x86_64
 
-![](../img/boot-x86_64-bios-efi-linux-windows.png)
+![](../../img/boot-x86_64-bios-efi-linux-windows.png)
 
 ## POST - Power On Self Test
 
