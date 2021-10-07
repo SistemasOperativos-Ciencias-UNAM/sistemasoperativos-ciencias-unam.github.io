@@ -25,11 +25,26 @@ authors:
 
 ## Restricciones
 
-- Levantar un _merge request_ en el [repositorio de tareas][repo-tareas] para avisar que ya se completó la tarea
-- Esta tarea debe ser entregada **individualmente**
+- Esta tarea debe ser entregada **por equipo** de acuerdo al [flujo de trabajo para la entrega de tareas y prácticas][flujo-de-trabajo]
+    - Levantar un _merge request_ en el [repositorio de tareas][repo-tareas] para entregar la tarea
+
+[flujo-de-trabajo]: https://sistemasoperativos-ciencias-unam.gitlab.io/2022-1/tareas-so/workflow/
+
+-------------------------------------------------------------------------------
+
+## Entregables
+
 - Se debe redactar la documentación en el archivo `README.md`
 - El repositorio debe incluir un archivo `Makefile` que compile el programa y que ejecute el _script_ que realiza las pruebas de cada programa
 - Se debe escribir un _script_ que ejecute el programa con las opciones y archivos de datos necesarios para realizar las pruebas
+
+### Extra
+
+- Entregar las bitácoras de compilación en el reporte como código embebible de [asciinema][asciinema-start]
+- Grabar las bitácoras de compilación con `asciinema` e incluir el [código embebible][asciinema-embed] en el archivo `README.md`
+
+[asciinema-start]: https://asciinema.org/docs/getting-started
+[asciinema-embed]: https://asciinema.org/docs/embedding
 
 -------------------------------------------------------------------------------
 
@@ -93,9 +108,7 @@ $ ls -A
 
 -------------------------------------------------------------------------------
 
-## Compilar los binarios
-
-### Generar `Makefile`
+## Generar `Makefile`
 
 En algunos casos es necesario utilizar `autoconf` o `autoreconf` para generar el _script_ `configure`. Para mas información, consultar el archivo `README` o `INSTALL`.
 
@@ -245,6 +258,8 @@ config.status: executing config.mak.autogen commands
 
 <script id="asciicast-267281" src="https://asciinema.org/a/267281.js" async></script>
 
+-------------------------------------------------------------------------------
+
 ## Manejo de dependencias
 
 ## Identificar dependencias
@@ -316,7 +331,7 @@ $ ldd git
 	/lib64/ld-linux-x86-64.so.2 (0x00007f8224460000)
 ```
 
-## Instalar programa
+## Instalar el programa
 
 Ejecutar `make install` para instalar los binarios y páginas de man en la carpeta `${PREFIX}` que se configuró, en este caso `${HOME}/local`
 
@@ -466,7 +481,7 @@ export PATH="${HOME}/local/bin:${PATH}"
 
 Después de agregar la línea en la configuración del _shell_ es necesario abror otra ventana de la terminal para ver los cambios
 
-### Veriricar el programa instalado
+### Verificar el programa instalado
 
 ```shell
 $ which git
