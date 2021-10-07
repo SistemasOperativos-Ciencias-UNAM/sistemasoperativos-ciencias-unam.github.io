@@ -1,39 +1,45 @@
-# Programas de sistema de archivos, procesos, hilos y señales
+---
+# https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data
+title: Compilación de software desde código fuente
+authors:
+- Andrés Leonardo Hernández Bermúdez
+---
+# Compilación de _software_ desde código fuente
 
 ## Objetivo
 
-+ Realizar la configuración y compilación de un programa en Linux o UNIX
+- Realizar la configuración y compilación de un programa en Linux o UNIX
 
 -------------------------------------------------------------------------------
 
 ## Lineamientos
 
-+ Entregar un script o Makefile para realizar el proceso de forma automática
-+ Instalar los binarios en `${HOME}/local`
-  - Agregar `${HOME}/local/bin` y  `${HOME}/local/sbin` al `${PATH}`
-  - Agregar `${HOME}/local/lib` a `${LD_LIBRARY_PATH}` con `ldconfig`
-  - Agregar `${HOME}/local/include` a las rutas donde se buscan los archivos de cabecera
-    * Pueden crear ligas simbólicas de `/usr/src/blah => ${HOME}/local/include
+- Entregar un _script_ o `Makefile` para realizar el proceso de forma automática
+- Instalar los binarios en `${HOME}/local`
+    - Agregar `${HOME}/local/bin` y  `${HOME}/local/sbin` al `${PATH}`
+    - Agregar `${HOME}/local/lib` a `${LD_LIBRARY_PATH}` con `ldconfig`
+    - Agregar `${HOME}/local/include` a las rutas donde se buscan los archivos de cabecera
+        - Pueden crear ligas simbólicas de `/usr/src/blah` => `${HOME}/local/include`
 
 -------------------------------------------------------------------------------
 
 ## Restricciones
 
-+ Levantar un _merge request_ en el [repositorio de tareas][repo-tareas] para avisar que ya se completó la tarea
-+ Esta tarea debe ser entregada **individualmente**
-+ Se debe redactar la documentación en el archivo `README.md`
-+ El repositorio debe incluir un archivo `Makefile` que compile y realice las pruebas de cada programa
-+ Se debe escribir un _script_ que ejecute el programa con las opciones y archivos de datos necesarios para realizar las pruebas
+- Levantar un _merge request_ en el [repositorio de tareas][repo-tareas] para avisar que ya se completó la tarea
+- Esta tarea debe ser entregada **individualmente**
+- Se debe redactar la documentación en el archivo `README.md`
+- El repositorio debe incluir un archivo `Makefile` que compile el programa y que ejecute el _script_ que realiza las pruebas de cada programa
+- Se debe escribir un _script_ que ejecute el programa con las opciones y archivos de datos necesarios para realizar las pruebas
 
 -------------------------------------------------------------------------------
 
 ## Requisitos
 
-+ Compilador `cc`
-+ Cabeceras estándar de GNU/Linux
-+ Utilerías de desarrollo
-  - `apt install build-essential`
-  - `yum groupinstall 'Development Tools'`
+- Compilador `cc`
+- Cabeceras estándar de GNU/Linux
+- Utilerías de desarrollo
+    - `apt install build-essential`
+    - `yum groupinstall 'Development Tools'`
 
 -------------------------------------------------------------------------------
 
@@ -41,27 +47,26 @@
 
 Encontrar un programa popular de código abierto que esté escrito en lenguaje C
 
-+ <https://sourceforge.net/directory/language:c/os:linux/>
-+ <https://gitlab.com/explore/projects/starred>
-+ <https://github.com/topics/c?l=c>
-+ <https://ftp.gnu.org/pub/gnu/>
+- <https://sourceforge.net/directory/language:c/os:linux/>
+- <https://gitlab.com/explore/projects/starred>
+- <https://github.com/topics/c?l=c>
+- <https://ftp.gnu.org/pub/gnu/>
 
 Obtener la URL de descarga
 
-+ Ejemplo: <https://github.com/nginx/nginx/archive/release-1.17.3.tar.gz>
+- Ejemplo: <https://github.com/git/git/archive/v2.23.0.tar.gz>
 
 Descargar el archivo `tar.gz` o `zip` con `wget`, `curl` o alguna herramienta similar
 
-```
+```shell
 $ mkdir -vp ~/src
 mkdir: created directory '/home/tonejito/src'
 
 $ cd !$
 cd ~/src
 
-$ wget -c -nv -O 'git-2.23.0.tar.gz' 'https://github.com/git/git/archive/v2.23.0.tar.gz'
-2019-09-10 07:28:46 URL:https://codeload.github.com/git/git/tar.gz/v2.23.0 [8647535] -> "git-2.23.0.tar.gz" [1]
-
+$ wget -c -nv -O git-2.23.0.tar.gz "https://github.com/git/git/archive/v2.23.0.tar.gz"
+2019-09-10 07:08:09 URL:https://codeload.github.com/git/git/tar.gz/v2.23.0 [8647535] -> "git-2.23.0.tar.gz" [1]
 ```
 
 -------------------------------------------------------------------------------
@@ -70,7 +75,7 @@ $ wget -c -nv -O 'git-2.23.0.tar.gz' 'https://github.com/git/git/archive/v2.23.0
 
 Descomprimir el archivo `tar.gz` o `zip`
 
-```
+```shell
 $ tar -xvvf git-2.23.0.tar.gz
 drwxrwxr-x root/root         0 2019-08-16 17:28 git-2.23.0/
 -rw-rw-r-- root/root      3273 2019-08-16 17:28 git-2.23.0/README.md
@@ -81,7 +86,7 @@ drwxrwxr-x root/root         0 2019-08-16 17:28 git-2.23.0/
 
 Cambiar al directorio con el código fuente e inspeccionar el contenido
 
-```
+```shell
 $ cd git-2.23.0/
 $ ls -A
 ```
@@ -90,33 +95,31 @@ $ ls -A
 
 ## Compilar los binarios
 
-### Configurar programa
+### Generar `Makefile`
 
-#### Uso de `autoconf` o `autoreconf`
 En algunos casos es necesario utilizar `autoconf` o `autoreconf` para generar el _script_ `configure`. Para mas información, consultar el archivo `README` o `INSTALL`.
 
-+ <https://www.gnu.org/savannah-checkouts/gnu/autoconf/manual/autoconf-2.69/autoconf.html#autoconf-Invocation>
-+ <https://www.gnu.org/savannah-checkouts/gnu/autoconf/manual/autoconf-2.69/autoconf.html#autoreconf-Invocation>
+- <https://www.gnu.org/savannah-checkouts/gnu/autoconf/manual/autoconf-2.69/autoconf.html#autoconf-Invocation>
+- <https://www.gnu.org/savannah-checkouts/gnu/autoconf/manual/autoconf-2.69/autoconf.html#autoreconf-Invocation>
 
 Para el caso de ejemplo (`git`) es necesario utilizar `autoconf` porque solo existe el archivo `configure.ac`
 
-```
+```shell
 $ ls -A configure*
 configure.ac
 ```
 
 Se ejecuta `autoconf` para generar el _script_ `configure`
  
-```
+```shell
 $ autoconf
 $ ls -A configure*
 configure  configure.ac
-
 ```
 
-#### Configurar el programa
+### Configurar el programa
 
-```
+```shell
 $ ./configure --help 2>&1 | tee configure.help
 `configure' configures git @@GIT_VERSION@@ to adapt to many kinds of systems.
 
@@ -216,11 +219,11 @@ Optional Packages:
 
 De la salida anterior se pueden observar varias cosas:
 
-+ `PREFIX` es la ubicación donde se instalará el programa. El valor por defecto es `/usr/local`
-+ `--with-PACKAGE[=AR$aG]` habilita el uso de otro programa para extender la funcionalidad (ej. OpenSSL para funciones criptográficas y soporte de SSL)
-+  `--without-PACKAGE` deshabilita el uso de ese programa adicional
+- `PREFIX` es la ubicación donde se instalará el programa. El valor por defecto es `/usr/local`
+- `--with-PACKAGE[=AR$aG]` habilita el uso de otro programa para extender la funcionalidad (ej. OpenSSL para funciones criptográficas y soporte de SSL)
+-  `--without-PACKAGE` deshabilita el uso de ese programa adicional
 
-```
+```shell
 $ ./configure --prefix=${HOME}/local --with-curl --with-openssl --with-libpcre2
 configure: Setting lib to 'lib' (the default)
 configure: Will try -pthread then -lpthread to enable POSIX Threads.
@@ -236,20 +239,22 @@ config.status: creating config.mak.autogen
 config.status: executing config.mak.autogen commands
 ```
 
+<!--
 [![asciicast](https://asciinema.org/a/267281.svg)](https://asciinema.org/a/267281)
+-->
 
-### Compila programa
+<script id="asciicast-267281" src="https://asciinema.org/a/267281.js" async></script>
 
-Ejecutar `make` para compilar el programa.
+## Manejo de dependencias
 
-#### Dependencias
+## Identificar dependencias
 
 Es muy probable que al programa le falten dependencias y marque errores como este:
 
-```
+```shell
 $ make
 GIT_VERSION = 2.23.0
-    * new build flags
+    - new build flags
     CC fuzz-commit-graph.o
 In file included from commit-graph.h:7,
                  from fuzz-commit-graph.c:1:
@@ -260,20 +265,20 @@ compilation terminated.
 make: *** [Makefile:2365: fuzz-commit-graph.o] Error 1
 ```
 
-##### Instalar dependencias
+### Instalar dependencias
 
 Es necesario instalar los paquetes `*-dev` o `*-devel` para proveer las bibliotecas y archivos de cabecera necesarios para compilar el programa. Ver la ayuda de `./configure --help`
 
-```
+```shell
 # export DEBIAN_FRONTEND=noninteractive
 # apt --quiet --assume-yes install libpcre2-dev libcurl4-openssl-dev libexpat1-dev zlib1g-dev
 ```
 
-##### Compilar el programa
+## Compilar el programa
 
 Una vez que esten instaladas las dependencias, ejecutar de nuevo `make` para compilar el programa
 
-```
+```shell
 $ make
     CC fuzz-commit-graph.o
     CC fuzz-pack-headers.o
@@ -285,18 +290,22 @@ $ make
     GEN bin-wrappers/test-tool
 ```
 
+<!--
 [![asciicast](https://asciinema.org/a/267271.svg)](https://asciinema.org/a/267271)
+-->
 
-##### Examinar el programa compilado
+<script id="asciicast-267271" src="https://asciinema.org/a/267271.js" async></script>
+
+## Examinar el programa compilado
 
 A veces los programas compilados están en el directorio `output` o `bin`
 
-```
+```shell
 $ file git
 git: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=0bfaa6b79f9d6b3c11d4fbd678b85f964f496180, with debug_info, not stripped
 ```
 
-```
+```shell
 $ ldd git
 	linux-vdso.so.1 (0x00007fffd815b000)
 	libpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x00007f82240c0000)
@@ -307,11 +316,11 @@ $ ldd git
 	/lib64/ld-linux-x86-64.so.2 (0x00007f8224460000)
 ```
 
-### Instalar programa
+## Instalar programa
 
 Ejecutar `make install` para instalar los binarios y páginas de man en la carpeta `${PREFIX}` que se configuró, en este caso `${HOME}/local`
 
-```
+```shell
 $ make install
     SUBDIR git-gui
     SUBDIR gitk-git
@@ -322,11 +331,15 @@ install -d -m 755 '/home/tonejito/local/libexec/git-core'
 	...
 ```
 
+<!--
 [![asciicast](https://asciinema.org/a/YjYr2FQcxjMT2Ysr66mrLq750.svg)](https://asciinema.org/a/YjYr2FQcxjMT2Ysr66mrLq750)
+-->
+
+<script id="asciicast-267273" src="https://asciinema.org/a/267273.js" async></script>
 
 Listar el directorio `${HOME}/local`
 
-```
+```shell
 $ ls -lA ${HOME}/local/bin/
 total 92700
 -rwxr-xr-x 129 tonejito users 20359480 Sep 10 08:02 git
@@ -338,7 +351,7 @@ total 92700
 -rwxr-xr-x 129 tonejito users 20359480 Sep 10 08:02 git-upload-pack
 ```
 
-```
+```shell
 $ tree -d ${HOME}/local
 /home/tonejito/local
 ├── bin
@@ -382,7 +395,7 @@ $ tree -d ${HOME}/local
 
 Inspeccionar los binarios instalados
 
-```
+```shell
 $ file ${HOME}/local/bin/*
 /home/tonejito/local/bin/git:                ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=0bfaa6b79f9d6b3c11d4fbd678b85f964f496180, with debug_info, not stripped
 /home/tonejito/local/bin/git-cvsserver:      Perl script text executable
@@ -393,7 +406,7 @@ $ file ${HOME}/local/bin/*
 /home/tonejito/local/bin/git-upload-pack:    ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=0bfaa6b79f9d6b3c11d4fbd678b85f964f496180, with debug_info, not stripped
 ```
 
-```
+```shell
 $ ldd ${HOME}/local/bin/*
 /home/tonejito/local/bin/git:
 	linux-vdso.so.1 (0x00007ffdb33f3000)
@@ -441,14 +454,26 @@ $ ldd ${HOME}/local/bin/*
 	/lib64/ld-linux-x86-64.so.2 (0x00007fe3388f0000)
 ```
 
-#### Veriricar el programa instalado
+## Modificar la variable de entorno `PATH`
 
+Es necesario agregar una lína de configuración al _shell_ para utilizar los programas compilados sin especificar la ruta completa
+
+Para lograr esto se agrega una línea al final del archivo `~/.bashrc` o `~/.zshrc` dependiendo del _shell_ que se utilice
+
+```sh
+export PATH="${HOME}/local/bin:${PATH}"
 ```
+
+Después de agregar la línea en la configuración del _shell_ es necesario abror otra ventana de la terminal para ver los cambios
+
+### Veriricar el programa instalado
+
+```shell
 $ which git
 /home/tonejito/local/bin/git
 ```
 
-```
+```shell
 $ git clone https://gitlab.com/tonejito/empty.git
 Cloning into 'empty'...
 warning: You appear to have cloned an empty repository.
@@ -456,4 +481,4 @@ warning: You appear to have cloned an empty repository.
 
 -------------------------------------------------------------------------------
 
-[repo-tareas]: https://gitlab.com/SistemasOperativos-Ciencias-UNAM/2020-1/tareas-so.git
+[repo-tareas]: https://gitlab.com/SistemasOperativos-Ciencias-UNAM/2022-1/tareas-so.git
