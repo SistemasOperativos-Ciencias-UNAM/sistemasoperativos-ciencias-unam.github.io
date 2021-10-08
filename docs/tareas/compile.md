@@ -6,6 +6,8 @@ authors:
 ---
 # Compilación de _software_ desde código fuente
 
+Práctica 1
+
 ## Objetivo
 
 - Realizar la configuración y compilación de un programa en Linux o UNIX
@@ -14,8 +16,8 @@ authors:
 
 ## Lineamientos
 
-- Entregar un _script_ o `Makefile` para realizar el proceso de forma automática
-- Instalar los binarios en `${HOME}/local`
+- Entregar un _script_ y `Makefile` para realizar el proceso listado a continuación de forma automática
+- Instalar los binarios compilados en `${HOME}/local`
     - Agregar `${HOME}/local/bin` y  `${HOME}/local/sbin` al `${PATH}`
     - Agregar `${HOME}/local/lib` a `${LD_LIBRARY_PATH}` con `ldconfig`
     - Agregar `${HOME}/local/include` a las rutas donde se buscan los archivos de cabecera
@@ -25,10 +27,9 @@ authors:
 
 ## Restricciones
 
-- Esta tarea debe ser entregada **por equipo** de acuerdo al [flujo de trabajo para la entrega de tareas y prácticas][flujo-de-trabajo]
-    - Levantar un _merge request_ en el [repositorio de tareas][repo-tareas] para entregar la tarea
-
-[flujo-de-trabajo]: https://sistemasoperativos-ciencias-unam.gitlab.io/2022-1/tareas-so/workflow/
+- La fecha de entrega es el día **viernes 15 de octubre de 2021**
+- Esta práctica debe ser entregada **por equipo** de acuerdo al [flujo de trabajo para la entrega de tareas y prácticas][flujo-de-trabajo]
+    - Crear un _merge request_ en el [repositorio de tareas][repo-tareas] para entregar la actividad
 
 -------------------------------------------------------------------------------
 
@@ -479,7 +480,7 @@ Para lograr esto se agrega una línea al final del archivo `~/.bashrc` o `~/.zsh
 export PATH="${HOME}/local/bin:${PATH}"
 ```
 
-Después de agregar la línea en la configuración del _shell_ es necesario abror otra ventana de la terminal para ver los cambios
+Después de agregar la línea en la configuración del _shell_ es necesario abrir otra ventana de la terminal para ver los cambios
 
 ### Verificar el programa instalado
 
@@ -496,4 +497,5 @@ warning: You appear to have cloned an empty repository.
 
 -------------------------------------------------------------------------------
 
+[flujo-de-trabajo]: https://sistemasoperativos-ciencias-unam.gitlab.io/2022-1/tareas-so/workflow/
 [repo-tareas]: https://gitlab.com/SistemasOperativos-Ciencias-UNAM/2022-1/tareas-so.git
