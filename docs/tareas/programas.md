@@ -1,3 +1,9 @@
+---
+# https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data
+title: Programas de sistema de archivos, procesos, hilos y señales
+authors:
+- Andrés Leonardo Hernández Bermúdez
+---
 # Programas de sistema de archivos, procesos, hilos y señales
 
 ## Objetivo

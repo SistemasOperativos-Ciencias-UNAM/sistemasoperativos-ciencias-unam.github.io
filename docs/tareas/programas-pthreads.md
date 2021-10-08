@@ -1,14 +1,12 @@
-# Universidad Nacional Autónoma de México
-# Facultad de Ciencias
-# Ciencias de la Computación
+---
+# https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data
+title: Práctica pthreads
+authors:
+- Andrés Leonardo Hernández Bermúdez
+---
+# Práctica `pthreads`
 
-## Sistemas Operativos
-
-Semestre 2018-1
-
-### Práctica `pthreads`
-
-#### Programa 1
+## Programa 1
 
 Crear un programa que implemente la biblioteca `pthread.h`, que incluya comentarios explicando cada bloque de funciones y que cumpla con los siguientes requerimientos:
 
@@ -38,7 +36,7 @@ hello:	hello.c
 	./hello
 ```
 
-#### Ejemplos de código y ayuda adicional
+## Ejemplos de código y ayuda adicional
 
 + Repositorio con ejemplos de código que utiliza `pthreads` [1]
 
@@ -57,7 +55,7 @@ hello:	hello.c
 
     * Comentar porque funciona o no el comando de compilación
 
-#### Recursos de ayuda
+## Recursos de ayuda
 
 + Mini tutorial interactivo de git [3]
 

@@ -26,7 +26,7 @@ Este paquete instala los siguientes elementos en el sistema:
 También es recomendable instalar las siguientes herramientas adicionales cuando se van a compilar programas de terceros
 
 ```shell
-# apt install git libtool pkg-config automake autoconf binutils file
+# apt install git libtool pkg-config automake autoconf binutils gettext file
 ```
 
 ## Verificar la instalación del compilador

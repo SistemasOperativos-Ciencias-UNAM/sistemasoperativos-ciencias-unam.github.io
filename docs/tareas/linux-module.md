@@ -1,3 +1,9 @@
+---
+# https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data
+title: Módulos para el kernel Linux
+authors:
+- Andrés Leonardo Hernández Bermúdez
+---
 # Módulos para el _kernel_ Linux
 
 ## Objetivo
