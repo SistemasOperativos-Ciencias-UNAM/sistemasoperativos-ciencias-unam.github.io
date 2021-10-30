@@ -10,11 +10,18 @@ site_url: https://SistemasOperativos-Ciencias-UNAM.gitlab.io
 site_dir: public
 docs_dir: docs
 
+extra_css:
+- css/extra.css
+
+# extra_javascript:
+# - js/extra.js
+
 # https://www.mkdocs.org/user-guide/choosing-your-theme/
 theme:
   name: mkdocs
   # name: readthedocs
   locale: es
+  navigation_depth: 4
   collapse_navigation: true
   titles_only: true
 
