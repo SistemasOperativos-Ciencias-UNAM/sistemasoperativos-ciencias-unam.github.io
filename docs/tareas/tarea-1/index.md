@@ -78,7 +78,7 @@ El código de salida para este caso debe ser `-1`
 
 ### Versión del programa
 
-Imprimir la versión del programa, el nombre del equipo y la información de los autores (nombre y número de cuenta) cuando se pase el argumento `-v` o `--version`.
+Imprimir la versión del programa, el nombre del equipo y la información de los autores (nombre y número de cuenta) cuando se pase el argumento `-V` o `--version`.
 
 ```text
 $ dummy --version
