@@ -47,15 +47,21 @@ Tiene el descriptor de archivos número `2` y se abre en **modo escritura**.
 
 ## Código de salida: `$?`
 
-Indica si el programa fue exitoso o no:
+Este código se regresa al final de la ejecución del programa y se puede especificar un valor entero para indicar diferentes estados de error.
 
 | Condición del programa | Código de salida |
 |:----------------------:|:----------------:|
 | Éxito                  | Igual a `0`      |
 | Fallo                  | Diferente de `0` |
 
-Este código se regresa al final de la ejecución del programa y se puede especificar un valor entero para indicar diferentes estados de error.
+El programa establece el código de salida en el valor que regresa la función `main()`:
 
+```c
+int main(void)
+{
+  return 0;
+}
+```
 La biblioteca `stdlib.h` define dos variables para indicar el éxito o fallo de un programa:
 
 - `EXIT_SUCCESS`: `0`
