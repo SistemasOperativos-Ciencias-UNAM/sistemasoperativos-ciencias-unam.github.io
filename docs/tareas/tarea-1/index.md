@@ -160,27 +160,27 @@ Este valor tiene una longitud máxima de 70 caracteres, el mensaje debe ser trun
 Ejemplo de ejecución si no se proporciona el argumento opcional:
 
 ```text
-$ esqueleto -1
+$ esqueleto -1 ; echo $?
 FAILURE: Status -1 is not a supported state
 -4
 
-$ esqueleto 0
+$ esqueleto 0 ; echo $?
 OK
 0
 
-$ esqueleto 1
+$ esqueleto 1 ; echo $?
 WARNING
 1
 
-$ esqueleto 2
+$ esqueleto 2 ; echo $?
 CRITICAL
 2
 
-$ esqueleto 3
+$ esqueleto 3 ; echo $?
 UNKNOWN
 3
 
-$ esqueleto 4
+$ esqueleto 4 ; echo $?
 FAILURE: Status 4 is not a supported state
 -4
 ```
@@ -190,27 +190,27 @@ FAILURE: Status 4 is not a supported state
 Ejemplo cuando se especifica el argumento opcional en línea de comandos:
 
 ```text
-$ esqueleto -1 "Test"
+$ esqueleto -1 "Test" ; echo $?
 FAILURE: Status -1 is not a supported state
 -4
 
-$ esqueleto 0 "Test"
+$ esqueleto 0 "Test" ; echo $?
 OK: Test
 0
 
-$ esqueleto 1 "Test"
+$ esqueleto 1 "Test" ; echo $?
 WARNING: Test
 1
 
-$ esqueleto 2 "Test"
+$ esqueleto 2 "Test" ; echo $?
 CRITICAL: Test
 2
 
-$ esqueleto 3 "Test"
+$ esqueleto 3 "Test" ; echo $?
 UNKNOWN: Test
 3
 
-$ esqueleto 4 "Test"
+$ esqueleto 4 "Test" ; echo $?
 FAILURE: Status 4 is not a supported state
 -4
 ```
@@ -220,27 +220,27 @@ FAILURE: Status 4 is not a supported state
 Ejemplo cuando se especifica el argumento opcional como variable de entorno:
 
 ```text
-$ MESSAGE="Test" esqueleto -1
+$ MESSAGE="Test" esqueleto -1 ; echo $?
 FAILURE: Status -1 is not a supported state
 -4
 
-$ MESSAGE="Test" esqueleto 0
+$ MESSAGE="Test" esqueleto 0 ; echo $?
 OK: Test
 0
 
-$ MESSAGE="Test" esqueleto 1
+$ MESSAGE="Test" esqueleto 1 ; echo $?
 WARNING: Test
 1
 
-$ MESSAGE="Test" esqueleto 2
+$ MESSAGE="Test" esqueleto 2 ; echo $?
 CRITICAL: Test
 2
 
-$ MESSAGE="Test" esqueleto 3
+$ MESSAGE="Test" esqueleto 3 ; echo $?
 UNKNOWN: Test
 3
 
-$ MESSAGE="Test" esqueleto 4
+$ MESSAGE="Test" esqueleto 4 ; echo $?
 FAILURE: Status 4 is not a supported state
 -4
 ```
@@ -250,27 +250,27 @@ FAILURE: Status 4 is not a supported state
 Ejemplo cuando se especifica el argumento opcional desde la entrada estándar:
 
 ```text
-$ echo "Test" | esqueleto -1 -
+$ echo "Test" | esqueleto -1 - ; echo $?
 FAILURE: Status -1 is not a supported state
 -4
 
-$ echo "Test" | esqueleto 0 -
+$ echo "Test" | esqueleto 0 - ; echo $?
 OK: Test
 0
 
-$ echo "Test" | esqueleto 1 -
+$ echo "Test" | esqueleto 1 - ; echo $?
 WARNING: Test
 1
 
-$ echo "Test" | esqueleto 2 -
+$ echo "Test" | esqueleto 2 - ; echo $?
 CRITICAL: Test
 2
 
-$ echo "Test" | esqueleto 3 -
+$ echo "Test" | esqueleto 3 - ; echo $?
 UNKNOWN: Test
 3
 
-$ echo "Test" | esqueleto 4 -
+$ echo "Test" | esqueleto 4 - ; echo $?
 FAILURE: Status 4 is not a supported state
 -4
 ```
