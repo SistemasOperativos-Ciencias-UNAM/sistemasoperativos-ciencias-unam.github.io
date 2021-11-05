@@ -68,10 +68,10 @@ Se deben entregar los siguientes elementos en la carpeta `entregas/tarea-1`
 Cuando el programa se ejecute sin argumentos, deberá escribir un mensaje breve que indique la manera en la que se utiliza.
 
 ```text
-$ dummy 
-dummy: Could not parse arguments
+$ esqueleto 
+esqueleto: Could not parse arguments
 Usage:
- dummy <integer state> [optional text]
+ esqueleto <integer state> [optional text]
 ```
 
 El código de salida para este caso debe ser `-1`
@@ -81,8 +81,8 @@ El código de salida para este caso debe ser `-1`
 Imprimir la versión del programa, el nombre del equipo y la información de los autores (nombre y número de cuenta) cuando se pase el argumento `-V` o `--version`.
 
 ```text
-$ dummy --version
-dummy v0.0.1 (Sistemas Operativos - Equipo-AAAA-BBBB-CCCC)
+$ esqueleto --version
+esqueleto v0.0.1 (Sistemas Operativos - Equipo-AAAA-BBBB-CCCC)
 1234657890	Nombre Apellido
 	...
 ```
@@ -94,8 +94,8 @@ El código de salida para este caso debe ser `-2`
 Cuando el programa se ejecute con la opción de línea de comandos `-h` o `--help` se deberá mostrar la ayuda del programa.
 
 ```text
-$ dummy --help
-dummy v0.0.1 (Sistemas Operativos - Equipo-AAAA-BBBB-CCCC)
+$ esqueleto --help
+esqueleto v0.0.1 (Sistemas Operativos - Equipo-AAAA-BBBB-CCCC)
 1234657890	Nombre Apellido
 	...
 
@@ -103,7 +103,7 @@ This plugin will simply return the state corresponding to the numeric value
 of the <state> argument with optional text
 
 Usage:
- dummy <integer state> [optional text]
+ esqueleto <integer state> [optional text]
 
 Options:
  -h, --help
@@ -160,27 +160,27 @@ Este valor tiene una longitud máxima de 70 caracteres, el mensaje debe ser trun
 Ejemplo de ejecución si no se proporciona el argumento opcional:
 
 ```text
-$ dummy -1    
+$ esqueleto -1    
 FAILURE: Status -1 is not a supported state
 -4
 
-$ dummy 0 
+$ esqueleto 0 
 OK
 0
 
-$ dummy 1
+$ esqueleto 1
 WARNING
 1
 
-$ dummy 2
+$ esqueleto 2
 CRITICAL
 2
 
-$ dummy 3
+$ esqueleto 3
 UNKNOWN
 3
 
-$ dummy 4
+$ esqueleto 4
 FAILURE: Status 4 is not a supported state
 -4
 ```
@@ -190,27 +190,27 @@ FAILURE: Status 4 is not a supported state
 Ejemplo cuando se especifica el argumento opcional en línea de comandos:
 
 ```text
-$ dummy -1 "Test"
+$ esqueleto -1 "Test"
 FAILURE: Status -1 is not a supported state
 -4
 
-$ dummy 0 "Test"
+$ esqueleto 0 "Test"
 OK: Test
 0
 
-$ dummy 1 "Test"
+$ esqueleto 1 "Test"
 WARNING: Test
 1
 
-$ dummy 2 "Test"
+$ esqueleto 2 "Test"
 CRITICAL: Test
 2
 
-$ dummy 3 "Test"
+$ esqueleto 3 "Test"
 UNKNOWN: Test
 3
 
-$ dummy 4 "Test"
+$ esqueleto 4 "Test"
 FAILURE: Status 4 is not a supported state
 -4
 ```
@@ -220,27 +220,27 @@ FAILURE: Status 4 is not a supported state
 Ejemplo cuando se especifica el argumento opcional como variable de entorno:
 
 ```text
-$ MESSAGE="Test" dummy -1
+$ MESSAGE="Test" esqueleto -1
 FAILURE: Status -1 is not a supported state
 -4
 
-$ MESSAGE="Test" dummy 0
+$ MESSAGE="Test" esqueleto 0
 OK: Test
 0
 
-$ MESSAGE="Test" dummy 1
+$ MESSAGE="Test" esqueleto 1
 WARNING: Test
 1
 
-$ MESSAGE="Test" dummy 2
+$ MESSAGE="Test" esqueleto 2
 CRITICAL: Test
 2
 
-$ MESSAGE="Test" dummy 3
+$ MESSAGE="Test" esqueleto 3
 UNKNOWN: Test
 3
 
-$ MESSAGE="Test" dummy 4
+$ MESSAGE="Test" esqueleto 4
 FAILURE: Status 4 is not a supported state
 -4
 ```
@@ -250,27 +250,27 @@ FAILURE: Status 4 is not a supported state
 Ejemplo cuando se especifica el argumento opcional desde la entrada estándar:
 
 ```text
-$ echo "Test" | dummy -1 -
+$ echo "Test" | esqueleto -1 -
 FAILURE: Status -1 is not a supported state
 -4
 
-$ echo "Test" | dummy 0 -
+$ echo "Test" | esqueleto 0 -
 OK: Test
 0
 
-$ echo "Test" | dummy 1 -
+$ echo "Test" | esqueleto 1 -
 WARNING: Test
 1
 
-$ echo "Test" | dummy 2 -
+$ echo "Test" | esqueleto 2 -
 CRITICAL: Test
 2
 
-$ echo "Test" | dummy 3 -
+$ echo "Test" | esqueleto 3 -
 UNKNOWN: Test
 3
 
-$ echo "Test" | dummy 4 -
+$ echo "Test" | esqueleto 4 -
 FAILURE: Status 4 is not a supported state
 -4
 ```
