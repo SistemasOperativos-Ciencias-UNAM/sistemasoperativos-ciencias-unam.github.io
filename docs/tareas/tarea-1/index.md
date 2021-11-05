@@ -68,7 +68,7 @@ Se deben entregar los siguientes elementos en la carpeta `entregas/tarea-1`
 Cuando el programa se ejecute sin argumentos, deberá escribir un mensaje breve que indique la manera en la que se utiliza.
 
 ```text
-$ esqueleto 
+$ esqueleto
 esqueleto: Could not parse arguments
 Usage:
  esqueleto <integer state> [optional text]
@@ -160,11 +160,11 @@ Este valor tiene una longitud máxima de 70 caracteres, el mensaje debe ser trun
 Ejemplo de ejecución si no se proporciona el argumento opcional:
 
 ```text
-$ esqueleto -1    
+$ esqueleto -1
 FAILURE: Status -1 is not a supported state
 -4
 
-$ esqueleto 0 
+$ esqueleto 0
 OK
 0
 
