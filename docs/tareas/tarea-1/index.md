@@ -122,16 +122,15 @@ El programa debe recibir un argumento obligatorio de tipo entero y un argumento 
 
 El primer argumento indica el código de salida que debe tener el programa:
 
+| Estado     | Argumento    | Código de salida | Mensaje  |
+|:----------:|:------------:|:----------------:|:--------:|
+|`OK`        | `0`          | `0`              | `STDOUT` |
+|`WARNING`   | `1`          | `1`              | `STDOUT` |
+|`CRITICAL`  | `2`          | `2`              | `STDOUT` |
+|`UNKNOWN`   | `3`          | `3`              | `STDOUT` |
+|`FAILURE`   | (otro valor) | `-4`             | `STDERR` |
 
-| Estado     | Número       | Código de salida |
-|:----------:|:------------:|:----------------:|
-|`OK`        | `0`          | `0`              |
-|`WARNING`   | `1`          | `1`              |
-|`CRITICAL`  | `2`          | `2`              |
-|`UNKNOWN`   | `3`          | `3`              |
-|`FAILURE`   | (otro valor) | `-4`             |
-
-Se debe imprimir un mensaje a la salida de error si el argumento de entrada tiene un valor que no entre en el rango [0..3] y regresar el código de salida `-4`.
+Se debe imprimir un mensaje a la **salida de error** si el argumento de entrada tiene un valor que no entre en el rango `[0..3]` y regresar el código de salida `-4`.
 
 ```text
 FAILURE: Status %d is not a supported state
