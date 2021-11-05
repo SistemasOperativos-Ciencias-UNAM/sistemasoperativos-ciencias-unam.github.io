@@ -159,6 +159,8 @@ Este valor tiene una longitud máxima de 70 caracteres, el mensaje debe ser trun
 
 Ejemplo de ejecución si no se proporciona el argumento opcional:
 
+- Se ejecuta `echo $?` para imprimir el código de salida del programa
+
 ```text
 $ esqueleto -1 ; echo $?
 FAILURE: Status -1 is not a supported state
@@ -188,6 +190,8 @@ FAILURE: Status 4 is not a supported state
 #### Mensaje desde argumento
 
 Ejemplo cuando se especifica el argumento opcional en línea de comandos:
+
+- Se ejecuta `echo $?` para imprimir el código de salida del programa
 
 ```text
 $ esqueleto -1 "Test" ; echo $?
@@ -219,6 +223,8 @@ FAILURE: Status 4 is not a supported state
 
 Ejemplo cuando se especifica el argumento opcional como variable de entorno:
 
+- Se ejecuta `echo $?` para imprimir el código de salida del programa
+
 ```text
 $ MESSAGE="Test" esqueleto -1 ; echo $?
 FAILURE: Status -1 is not a supported state
@@ -248,6 +254,8 @@ FAILURE: Status 4 is not a supported state
 #### Mensaje desde entrada estándar
 
 Ejemplo cuando se especifica el argumento opcional desde la entrada estándar:
+
+- Se ejecuta `echo $?` para imprimir el código de salida del programa
 
 ```text
 $ echo "Test" | esqueleto -1 - ; echo $?
