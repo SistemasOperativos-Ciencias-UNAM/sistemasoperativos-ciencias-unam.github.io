@@ -20,7 +20,7 @@ Se puede utilizar el [código de muestra][skeleton-c] del tema [_elementos de en
 
 ## Lineamientos
 
-Escribir un progrma en C que cumpla con los siguientes requisitos
+Escribir un progrma en C que cumpla con los siguientes requisitos:
 
 - Lee argumentos de entrada
 - Lee variables de entorno
@@ -57,7 +57,6 @@ Se deben entregar los siguientes elementos en la carpeta `entregas/tarea-1`
 - Analizar los programas compilados con `file`, `ldd` y `readelf` o `dumpelf`
 - Entregar las bitácoras de compilación y análisis en el reporte como código embebible de [asciinema][asciinema-start]
 - Grabar las bitácoras de compilación y análisis con `asciinema` e incluir el [código embebible][asciinema-embed] en el archivo `README.md`
-
 
 --------------------------------------------------------------------------------
 
