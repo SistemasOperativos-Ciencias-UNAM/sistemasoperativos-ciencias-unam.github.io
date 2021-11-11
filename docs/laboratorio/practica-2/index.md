@@ -20,7 +20,7 @@ Se puede consultar la lista de llamadas al sistema en el sitio [linux.die.net][l
 
 ## Lineamientos
 
-Escribir dos programas en C que cumplan con los siguientes requisitos:
+Escribir tres programas en C que cumplan con los siguientes requisitos:
 
 `check_procs`
 
@@ -141,6 +141,8 @@ Utiliza los archivos dentro del directorio `/proc/<PID>` para obtener la informa
 
 - Este programa lee archivos desde el directorio `/proc/<PID>` por lo que se deben utilizar funciones como las siguientes para el manejo de archivos
     -  `chdir(3)`, `fopen(3)`, `fclose(3)`, `getdirentries(3)`, `readdir(3)`, `stat(3)`, `scandir(3)`, etc.
+    - Existe un ejemplo de la manera de acceder al directorio en [esta sección][filesystems-ls] del sitio
+    - El código completo del programa `ls` se encuentra en el repositorio de [código de ejemplo][ls-c].
 - Varios de los archivos tienen campos delimitados por `\0` y es necesario convertir ese caracter a un espacio en blanco "` `" para poder mostrar la información de manera correcta
 - La información que contienen los archivos dentro de `/proc/<PID>` no tiene una longitud determinada, se sugiere utilizar un _buffer_ de lectura de un tamaño fijo e inicializarlo con `bzero(3)` o `memset(3)` antes de utilizarlo
 
@@ -181,3 +183,5 @@ El programa muestra la lista de variables de entorno del programa al final de la
 [repo-tareas]: https://gitlab.com/SistemasOperativos-Ciencias-UNAM/2022-1/tareas-so.git
 [linux-syscalls-man]: https://linux.die.net/man/2/
 [tarea-1]: ../tarea-1/
+[filesystems-ls]: /temas/filesystem/ls/
+[ls-c]: https://gitlab.com/SistemasOperativos-Ciencias-UNAM/codigo-ejemplo/-/blob/master/filesystems/ls.c
