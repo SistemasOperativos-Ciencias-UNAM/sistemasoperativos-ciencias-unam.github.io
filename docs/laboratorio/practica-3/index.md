@@ -65,7 +65,7 @@ Existen un ejemplo de código fuente para la función [`waitpid(3)`][waitpid-c]
 
 # Restricciones
 
-- La fecha límite de entrega es el **domingo 28 de noviembre de 2021** a las 23:59 horas
+- La fecha límite de entrega es el **lunes 29 de noviembre de 2021** a las 23:59 horas
 - Esta actividad debe ser entregada **por equipo** de acuerdo al [flujo de trabajo para la entrega de tareas y prácticas][flujo-de-trabajo]
     - Crear un _merge request_ en el [repositorio de tareas][repo-tareas] para entregar la actividad
 
