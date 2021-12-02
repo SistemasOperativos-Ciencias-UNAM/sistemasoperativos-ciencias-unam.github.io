@@ -140,7 +140,7 @@ La ejecución para mostrar la versión de los programas y el texto de ayuda es l
 
 #### Ejecución de `hashdeep`
 
-En ese caso se están calculando las sumas de verificación `md5`, `sha1` y `sha256` de los archivos muestra.
+En ese caso se están calculando las sumas de verificación `md5`, `sha1` y `sha256` de los [archivos muestra][archivos-muestra].
 
 ```text
 $ hashdeep ./
@@ -181,3 +181,4 @@ $ find ./ -ls
 [hashdeep-sourceforge]: http://md5deep.sourceforge.net/start-hashdeep.html
 [man-sysvipc]: https://man7.org/linux/man-pages/man7/svipc.7.html
 [man-sem_overview]: https://man7.org/linux/man-pages/man7/sem_overview.7.html
+[archivos-muestra]: https://gitlab.com/SistemasOperativos-Ciencias-UNAM/sistemasoperativos-ciencias-unam.gitlab.io/-/blob/master/docs/laboratorio/practica-4/files/
