@@ -29,3 +29,8 @@ markdown_extensions:
 - toc:
     permalink: "#"
     separator: "-"
+
+plugins:
+  - exclude:
+      glob:
+        - ".*.sw?"
