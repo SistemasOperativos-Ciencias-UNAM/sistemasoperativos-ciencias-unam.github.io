@@ -4,3 +4,17 @@
   margin-right: auto;
   width: fit-content;
 }
+
+.yes
+{
+  font-size: 1.2em;
+  font-weight: bold;
+  color: green;
+}
+
+.no
+{
+  font-size: 1.2em;
+  font-weight: bold;
+  color: red;
+}
