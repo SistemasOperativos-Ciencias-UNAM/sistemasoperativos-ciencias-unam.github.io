@@ -40,10 +40,12 @@ Se deben entregar los siguientes elementos en la carpeta `entregas/practica-6`
 
 ## Lineamientos
 
-Escribir un archivo `Dockerfile` que cumpla con los siguientes requisitos:
+Escribir un archivo `Makefile` que cumpla con los siguientes requisitos:
 
-- Usar las etiquetas: `FROM`, `WORKDIR`, `RUN`, `EXPOSE`, `WORKDIR`, `COPY`, `CMD` 
-- Instalar y correr el servidor web realizado en la `entregas/practica-5`
+- En el `Dockerfile` usar las etiquetas: `FROM`, `WORKDIR`, `RUN`, `EXPOSE`, `WORKDIR`, `COPY`, `CMD` 
+- El archivo `Makefile` debe construir el contenedor (docker build -t TAG .)
+- Realizar push del contenedor a Docker Hub
+- Correr el contenedor en modo interactivo, exponer el puerto y monte algún directorio como htdocs (docker run -it -p 8080:80 -v ${PWD}:/opt/htdocs fulanito/servidor:latest)
 
 --------------------------------------------------------------------------------
 
