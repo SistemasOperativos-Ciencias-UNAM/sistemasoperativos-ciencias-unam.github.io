@@ -26,12 +26,18 @@ Práctica 6
 
 ## Elementos de apoyo
 
-- [Introducción a Docker - Parte 1 📼][video-intro-docker-parte-1]
-- [Introducción a Docker - Parte 2 📼][video-intro-docker-parte-2]
-- [Guía básica de Docker][docker-get_started]
-- [Referencia de `Dockerfile`][dockerfile-reference]
-- [Referencia de `BuildKit` para Docker][docker-buildkit]
-- [Referencia de _multi-stage_ en `Dockerfile`][docker-multistage]
+- Videos:
+    - [Introducción a Docker - Parte 1 📼][video-intro-docker-parte-1]
+    - [Introducción a Docker - Parte 2 📼][video-intro-docker-parte-2]
+- Guías y documentación:
+    - [Guía básica de Docker][docker-get_started]
+    - [Tutorial de Docker][docker-tutorial]
+    - [Laboratorio interactivo de Docker][docker-play]
+    - [Libro en línea de Docker][docker-curriculum]
+- Referencia de comandos:
+    - [Referencia de `Dockerfile`][dockerfile-reference]
+    - [Referencia de `BuildKit` para Docker][docker-buildkit]
+    - [Referencia de _multi-stage_ en `Dockerfile`][docker-multistage]
 - [Imagenes de Debian en Docker Hub][dockerhub-debian]
 
 --------------------------------------------------------------------------------
@@ -92,6 +98,10 @@ COPY --from=builder servidor-web ./
 [video-intro-docker-parte-2]: https://www.youtube.com/watch?v=WpfQ8WWOYYA&list=PLa3Cxza-egQWixsZtom-qU_85A2QgjF5U&index=49
 
 [docker-get_started]: https://docs.docker.com/get-started/overview/
+[docker-tutorial]: https://www.docker.com/101-tutorial
+[docker-play]: https://labs.play-with-docker.com/
+[docker-curriculum]: https://docker-curriculum.com/
+
 [dockerfile-reference]: https://docs.docker.com/engine/reference/builder/
 [docker-buildkit]: https://docs.docker.com/develop/develop-images/build_enhancements/
 [docker-multistage]: https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
