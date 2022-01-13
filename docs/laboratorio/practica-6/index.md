@@ -28,6 +28,7 @@ Práctica 6
 
 - [Introducción a Docker - Parte 1 📼][video-intro-docker-parte-1]
 - [Introducción a Docker - Parte 2 📼][video-intro-docker-parte-2]
+- [Guía básica de Docker][docker-get_started]
 - [Referencia de `Dockerfile`][dockerfile-reference]
 - [Referencia de `BuildKit` para Docker][docker-buildkit]
 - [Referencia de _multi-stage_ en `Dockerfile`][docker-multistage]
@@ -90,8 +91,10 @@ COPY --from=builder servidor-web ./
 [video-intro-docker-parte-1]: https://www.youtube.com/watch?v=jhf-8I6zHoU&list=PLa3Cxza-egQWixsZtom-qU_85A2QgjF5U&index=48
 [video-intro-docker-parte-2]: https://www.youtube.com/watch?v=WpfQ8WWOYYA&list=PLa3Cxza-egQWixsZtom-qU_85A2QgjF5U&index=49
 
+[docker-get_started]: https://docs.docker.com/get-started/overview/
 [dockerfile-reference]: https://docs.docker.com/engine/reference/builder/
 [docker-buildkit]: https://docs.docker.com/develop/develop-images/build_enhancements/
 [docker-multistage]: https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
 [dockerfile-multistage-example]: https://github.com/J-Rios/TLG_JoinCaptchaBot/blob/master/docker/Dockerfile
+
 [dockerhub-debian]: https://hub.docker.com/_/debian
