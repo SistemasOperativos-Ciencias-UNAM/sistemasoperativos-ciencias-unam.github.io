@@ -63,6 +63,7 @@ Programa que muestre la funcionalidad básica del mecanismo de comunicación ent
 
 Elaborar una extensión al código de alguna de las prácticas anteriores para implementar la funcionalidad deseada, de acuerdo al tema asignado:
 
+<!--	-->
 #### SHM: Memoria compartida
 
 Hashdeep con memoria compartida
@@ -70,6 +71,7 @@ Hashdeep con memoria compartida
 - 1 bloque con el contenido del archivo
 - 4 bloques con la respuesta (md5, sha1, sha256, sha512)
 - Requiere sincronización
+<!--	-->
 
 #### Manejo de memoria con mmap
 
@@ -100,12 +102,22 @@ Crear la ruta hacia ARCHIVO en caso de que no exista
 
 Extensión del servidor web que junte todas las bitácoras y las envíe a SYSLOG
 
-- Requiere sincronización
+Crear un proceso adicional que reciba todas las bitácoras del proceso padre y de cada proceso hijo que atiende a los clientes utilizando paso de mensajes como mecanismo de comunicación entre procesos
 
+Las bitácoras recibidas de otros procesos se envían a SYSLOG utilizando la categoría local0 y la prioridad normal
+
+> Se sugiere implementar algún mecanismo de sincronización para controlar el paso de mensajes
+
+| ![](img/web-syslog-mp.png)                                  |
+|:-----------------------------------------------------------:|
+| Extensión del servidor web para envío de bitácoras a SYSLOG |
+
+<!--	-->
 #### MQ: Colas de mensajes
 Extensión del servidor web que junte todas las bitácoras y las envíe a SYSLOG
 
 - Requiere sincronización
+<!--	-->
 
 ### Aplicaciones auto-contenidas
 
