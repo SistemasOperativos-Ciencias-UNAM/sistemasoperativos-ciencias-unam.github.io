@@ -24,6 +24,8 @@ theme:
   navigation_depth: 4
   collapse_navigation: true
   titles_only: true
+  analytics:
+    gtag: G-L5N0M0PN8D
 
 markdown_extensions:
 - toc:
